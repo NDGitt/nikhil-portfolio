@@ -14,7 +14,14 @@ const ChatAssistant = () => {
   const chatEndRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+      // Prevent page scroll
+      window.scrollTo({
+        top: window.scrollY,
+        behavior: 'instant'
+      })
+    }
   }
 
   useEffect(() => {
@@ -27,6 +34,10 @@ const ChatAssistant = () => {
 
     const userMessage = input.trim()
     setInput('')
+    
+    // Save current scroll position
+    const currentScroll = window.scrollY
+    
     setMessages(prev => [...prev, { role: 'user', content: userMessage }])
     setIsLoading(true)
 
@@ -43,6 +54,12 @@ const ChatAssistant = () => {
       
       const data = await response.json()
       setMessages(prev => [...prev, { role: 'assistant', content: data.response }])
+      
+      // Restore scroll position
+      window.scrollTo({
+        top: currentScroll,
+        behavior: 'instant'
+      })
     } catch (error) {
       console.error('Error:', error)
       setMessages(prev => [...prev, { 

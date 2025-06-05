@@ -35,7 +35,12 @@ function App() {
             {sections.map((section) => (
               <button
                 key={section.id}
-                onClick={() => scrollToSection(section.id)}
+                onClick={() => {
+                  const element = document.getElementById(section.id)
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
                 className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap min-w-fit"
               >
                 {section.title}
