@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import ProjectSection from './components/ProjectSection'
 import { DocumentTextIcon, ArrowTopRightOnSquareIcon, BriefcaseIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 import { companies } from './data/companies'
+import ChatAssistant from './components/ChatAssistant'
 
 function App() {
   const [sections] = useState([
@@ -119,6 +120,10 @@ function App() {
                     <div className="text-sm text-gray-600">Value Created</div>
                   </div>
                 </div>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+                <ChatAssistant />
               </div>
             </motion.div>
 
