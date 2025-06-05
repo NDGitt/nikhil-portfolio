@@ -56,7 +56,7 @@ const Header = () => {
               <div className="flex space-x-2">
                 <motion.a
                   whileHover={{ scale: 1.1 }}
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/nikhil-devgan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-gray-600 hover:text-indigo-600 transition-colors"

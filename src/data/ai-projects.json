@@ -12,5 +12,12 @@
     "description": "Description of AI project 2. This is a placeholder that you should replace with your actual project details.",
     "image": "/images/ai-project-2.jpg",
     "link": "https://example.com/ai-project-2"
+  },
+  {
+    "id": "ai-3",
+    "title": "AI Project 3",
+    "description": "Description of AI project 3. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/ai-project-3.jpg",
+    "link": "https://example.com/ai-project-3"
   }
 ] 

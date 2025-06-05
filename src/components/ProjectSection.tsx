@@ -26,11 +26,11 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
       {/* Decorative line */}
       <div className="absolute left-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="flex flex-col lg:flex-row gap-12">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="lg:col-span-4 lg:sticky lg:top-24 self-start space-y-6"
+          className="lg:w-1/4 lg:sticky lg:top-24 self-start space-y-6"
         >
           <div className="flex items-center space-x-4">
             <h2 className="text-4xl font-bold heading-underline">
@@ -41,11 +41,11 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
           
           <div className="prose prose-lg">
             <p className="text-gray-600">
-              {id === 'ai' && "Innovative AI solutions that push the boundaries of what's possible."}
-              {id === 'consulting' && "Strategic consulting projects that delivered measurable business impact."}
-              {id === 'game' && "Exciting projects and achievements from my time at GAME."}
-              {id === 'social' && "Projects that made a positive impact on society and communities."}
-              {id === 'other' && "Other interesting projects and initiatives I've been involved with."}
+              {id === 'ai' && "Innovative AI solutions pushing boundaries of what's possible"}
+              {id === 'consulting' && "Strategic consulting delivering measurable impact"}
+              {id === 'game' && "Growth Stories of Entrepreneurs from India's first SMB accelerator"}
+              {id === 'social' && "Projects creating positive societal impact"}
+              {id === 'other' && "Additional noteworthy initiatives"}
             </p>
           </div>
 
@@ -54,11 +54,6 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
               <div className={`w-2 h-2 rounded-full ${color}`} />
               <span>{projects.length} Projects</span>
             </div>
-            <div className="h-4 w-px bg-gray-200" />
-            <div className="flex items-center space-x-2">
-              <div className={`w-2 h-2 rounded-full ${color}`} />
-              <span>Last updated {new Date().toLocaleDateString()}</span>
-            </div>
           </div>
         </motion.div>
 
@@ -66,15 +61,16 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.slice(0, 4).map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <motion.div
               key={project.id}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
+              className="h-full"
             >
               <ProjectCard {...project} />
             </motion.div>
