@@ -8,10 +8,10 @@
   },
   {
     "id": "ai-2",
-    "title": "AI Project 2",
-    "description": "Description of AI project 2. This is a placeholder that you should replace with your actual project details.",
+    "title": "AI Profile Finder",
+    "description": "AI-powered tool to search structured candidate profiles with natural language. Built for recruiters.",
     "image": "/images/ai-project-2.jpg",
-    "link": "https://example.com/ai-project-2"
+    "link": "https://ai-talent-scout-nikhild.replit.app/"
   },
   {
     "id": "ai-3",
