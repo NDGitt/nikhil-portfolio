@@ -30,18 +30,20 @@ export const companies: Company[] = [
   {
     name: 'GAME',
     logo: '/images/companies/company2.png',
-    url: 'https://game.com',
-    role: 'Strategy Lead',
+    url: 'https://massentrepreneurship.org',
+    role: 'Product Owner',
     period: '2020-2022',
     impact: {
       value: 60,
       families: 2000,
       other: [
-        'Spearheaded digital transformation',
+        'Built India\'s first SMB Accelerator',
         'Launched multiple successful products'
       ]
     }
   },
+
+  
   // Add more companies as needed...
 ];
 

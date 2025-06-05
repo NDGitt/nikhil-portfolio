@@ -8,9 +8,9 @@ function App() {
   const [sections] = useState([
     { id: 'ai', title: 'AI Projects', color: 'bg-indigo-500' },
     { id: 'consulting', title: 'Consulting Projects', color: 'bg-emerald-500' },
-    { id: 'game', title: 'Work at GAME', color: 'bg-violet-500' },
-    { id: 'social', title: 'Social Impact', color: 'bg-amber-500' },
-    { id: 'other', title: 'Other Things', color: 'bg-rose-500' },
+    { id: 'game', title: "Building India's first SMB Accelerator", color: 'bg-violet-500' },
+    // { id: 'social', title: 'Social Impact', color: 'bg-amber-500' },
+    // { id: 'other', title: 'Other Things', color: 'bg-rose-500' },
   ])
 
   const scrollToSection = (sectionId: string) => {
@@ -24,10 +24,10 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50">
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-4 py-2 text-sm">
+          <div className="flex items-center justify-center space-x-4 py-3 text-sm">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="px-3 py-1 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600"
+              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
             >
               Top
             </button>
@@ -35,7 +35,7 @@ function App() {
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className="px-3 py-1 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600"
+                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap min-w-fit"
               >
                 {section.title}
               </button>
@@ -97,6 +97,9 @@ function App() {
                     </h1>
                     <p className="text-xl text-gray-600 mt-2">
                       Product & Strategy Professional
+                    </p>
+                    <p className="text-base mt-1 text-slate-600">
+                      <span className="text-[#FD8515]">Berkeley</span><span className="text-[#003262]">Haas</span> MBA'25
                     </p>
                     <div className="flex items-center space-x-3 mt-4 text-sm text-gray-500">
                       <span>Based in San Francisco</span>
