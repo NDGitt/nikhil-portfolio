@@ -1,0 +1,16 @@
+[
+  {
+    "id": "social-1",
+    "title": "Social Impact Project 1",
+    "description": "Description of social impact project 1. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/social-project-1.jpg",
+    "link": "https://example.com/social-project-1"
+  },
+  {
+    "id": "social-2",
+    "title": "Social Impact Project 2",
+    "description": "Description of social impact project 2. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/social-project-2.jpg",
+    "link": "https://example.com/social-project-2"
+  }
+] 

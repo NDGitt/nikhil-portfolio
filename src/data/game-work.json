@@ -1,0 +1,16 @@
+[
+  {
+    "id": "game-1",
+    "title": "GAME Project 1",
+    "description": "Description of GAME project 1. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/game-project-1.jpg",
+    "link": "https://example.com/game-project-1"
+  },
+  {
+    "id": "game-2",
+    "title": "GAME Project 2",
+    "description": "Description of GAME project 2. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/game-project-2.jpg",
+    "link": "https://example.com/game-project-2"
+  }
+] 

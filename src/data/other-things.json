@@ -1,0 +1,16 @@
+[
+  {
+    "id": "other-1",
+    "title": "Instagram Highlights",
+    "description": "Check out my latest adventures and creative moments on Instagram.",
+    "image": "/images/instagram-preview.jpg",
+    "link": "https://instagram.com/yourprofile"
+  },
+  {
+    "id": "other-2",
+    "title": "Personal Project",
+    "description": "Description of a personal project. This is a placeholder that you should replace with your actual project details.",
+    "image": "/images/personal-project.jpg",
+    "link": "https://example.com/personal-project"
+  }
+] 
