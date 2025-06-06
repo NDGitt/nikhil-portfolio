@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProjectSection from './ProjectSection';
 import ChatAssistant from './ChatAssistant';
 import MobileExperienceTimeline from './MobileExperienceTimeline';
-import CopyEmailButton from './CopyEmailButton';
 import MobileEmailButton from './MobileEmailButton';
 
 const MobileView = () => {

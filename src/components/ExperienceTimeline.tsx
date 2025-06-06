@@ -69,7 +69,7 @@ const ExperienceTimeline: FC = () => {
                         {company.name === "Global Alliance for Mass Entrepreneurship (GAME)" ? (
                           // Vertical stack for GAME's partners
                           <div className="flex flex-col items-start gap-3 pl-4">
-                            {company.partners.map((partner, idx) => (
+                            {company.partners.map((partner) => (
                               <motion.div
                                 key={partner.name}
                                 className="group relative"
