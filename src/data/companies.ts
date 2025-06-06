@@ -7,6 +7,10 @@ interface Company {
   impact?: {
     other?: string[];
   };
+  partners?: Array<{
+    name: string;
+    logo: string;
+  }>;
 }
 
 export const companies: Company[] = [
@@ -27,27 +31,43 @@ export const companies: Company[] = [
     name: 'Global Alliance for Mass Entrepreneurship (GAME)',
     logo: '/images/companies/game-logo.png',
     url: 'https://massentrepreneurship.org',
-    role: 'Product Owner',
+    role: 'Senior Product Manager',
     period: '2020-2022',
     impact: {
       other: [
         'Built India\'s first SMB Accelerator',
         'Launched multiple successful products reaching 2000+ entrepreneurs'
       ]
-    }
+    },
+    partners: [
+      {
+        name: 'Bill & Melinda Gates Foundation',
+        logo: '/images/partners/gates-foundation-logo.png'
+      },
+      {
+        name: 'Rockefeller Foundation',
+        logo: '/images/partners/rockefeller-logo.png'
+      }
+    ]
   },
   {
     name: 'Vellom',
     logo: '/images/companies/vellom-logo.png',
     url: 'https://vellom.com',
-    role: 'Product Strategy Lead',
+    role: 'Independent Consultant',
     period: '2022-2023',
     impact: {
       other: [
         'Led product strategy for AI-powered compliance platform',
         'Drove 3x growth in user engagement metrics'
       ]
-    }
+    },
+    partners: [
+      {
+        name: 'McKinsey & Company',
+        logo: '/images/partners/mckinsey-logo.png'
+      }
+    ] 
   },
   {
     name: 'Epson',

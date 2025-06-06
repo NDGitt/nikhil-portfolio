@@ -25,18 +25,59 @@ function App() {
             >
               Top
             </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('ai-assistant')
+                if (element) {
+                  const navHeight = 64; // Height of the navigation bar
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({
+                    top: elementPosition - navHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
+            >
+              🤖 AI Assistant
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('professional-journey')
+                if (element) {
+                  const navHeight = 64; // Height of the navigation bar
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({
+                    top: elementPosition - navHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
+            >
+              💼 Professional Journey
+            </button>
             {sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => {
                   const element = document.getElementById(section.id)
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    const navHeight = 64; // Height of the navigation bar
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - navHeight,
+                      behavior: 'smooth'
+                    });
                   }
                 }}
-                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap min-w-fit"
+                className={`px-4 py-2 rounded-full transition-all whitespace-nowrap min-w-fit ${
+                  section.id === 'ai' 
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-md hover:scale-105'
+                    : 'hover:bg-indigo-100 hover:text-indigo-700 text-gray-600'
+                }`}
               >
-                {section.title}
+                {section.id === 'ai' ? '✨ AI Projects' : section.title}
               </button>
             ))}
           </div>
@@ -51,8 +92,8 @@ function App() {
           className="max-w-7xl mx-auto space-y-16"
         >
           {/* Hero Section - AI Assistant */}
-          <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-8 mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div id="ai-assistant" className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-6 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Brief Intro - 4 columns */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -126,6 +167,7 @@ function App() {
 
           {/* Experience Timeline Section */}
           <motion.div
+            id="professional-journey"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}

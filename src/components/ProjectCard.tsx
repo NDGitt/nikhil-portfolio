@@ -42,7 +42,7 @@ const ProjectCard = ({ title, description, image, link, tags = [], metrics = [] 
             <ArrowUpRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
           </div>
           
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+          <p className="text-sm text-gray-600 mb-4 line-clamp-4">
             {description}
           </p>
 

@@ -60,6 +60,66 @@ const ExperienceTimeline: FC = () => {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Partners section */}
+                    {company.partners && company.partners.length > 0 && (
+                      <div className="mt-6 pt-4 border-t border-gray-100 relative">
+                        <span className="absolute -top-2.5 left-0 text-[10px] font-medium text-gray-400 bg-white px-2">
+                          {company.name === "Global Alliance for Mass Entrepreneurship (GAME)" ? "Funders" : "Worked with"}
+                        </span>
+                        {company.name === "Global Alliance for Mass Entrepreneurship (GAME)" ? (
+                          // Vertical stack for GAME's partners
+                          <div className="flex flex-col items-start gap-3 pl-4">
+                            {company.partners.map((partner, idx) => (
+                              <motion.div
+                                key={partner.name}
+                                className="group relative"
+                                whileHover={{ scale: 1.05 }}
+                              >
+                                <div className="p-1">
+                                  <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className={`w-auto object-contain opacity-100 transition-all duration-300 ${
+                                      partner.name.includes('Gates') ? 'h-5' : 'h-10'
+                                    }`}
+                                  />
+                                </div>
+                                <div className="absolute -right-[120%] top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                  <div className="bg-gray-800 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                                    {partner.name}
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        ) : company.name === "Vellom" ? (
+                          // Top-left aligned for Vellom's partner
+                          <div className="flex justify-start pl-4">
+                            {company.partners.map((partner) => (
+                              <motion.div
+                                key={partner.name}
+                                className="group relative"
+                                whileHover={{ scale: 1.05 }}
+                              >
+                                <div className="p-1">
+                                  <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="h-16 w-auto object-contain opacity-100 transition-all duration-300"
+                                  />
+                                </div>
+                                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                  <div className="bg-gray-800 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                                    {partner.name}
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        ) : null}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
