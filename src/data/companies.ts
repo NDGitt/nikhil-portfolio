@@ -16,7 +16,7 @@ interface Company {
 export const companies: Company[] = [
   {
     name: 'ZS Associates',
-    logo: '/images/companies/zs-logo.png',
+    logo: '/nikhil-portfolio/images/companies/zs-logo.png',
     url: 'https://www.zs.com',
     role: 'Associate Consultant',
     period: '2016-2020',
@@ -30,7 +30,7 @@ export const companies: Company[] = [
   },
   {
     name: 'Global Alliance for Mass Entrepreneurship (GAME)',
-    logo: '/images/companies/game-logo.png',
+    logo: '/nikhil-portfolio/images/companies/game-logo.png',
     url: 'https://massentrepreneurship.org',
     role: 'Senior Product Manager',
     period: '2020-2022',
@@ -44,17 +44,17 @@ export const companies: Company[] = [
     partners: [
       {
         name: 'Bill & Melinda Gates Foundation',
-        logo: '/images/partners/gates-foundation-logo.png'
+        logo: '/nikhil-portfolio/images/partners/gates-foundation-logo.png'
       },
       {
         name: 'Rockefeller Foundation',
-        logo: '/images/partners/rockefeller-logo.png'
+        logo: '/nikhil-portfolio/images/partners/rockefeller-logo.png'
       }
     ]
   },
   {
     name: 'Vellom',
-    logo: '/images/companies/vellom-logo.png',
+    logo: '/nikhil-portfolio/images/companies/vellom-logo.png',
     url: 'https://vellom.com',
     role: 'Independent Consultant · Product & Ops Strategy',
     period: '2022-2023',
@@ -67,13 +67,13 @@ export const companies: Company[] = [
     partners: [
       {
         name: 'McKinsey & Company',
-        logo: '/images/partners/mckinsey-logo.png'
+        logo: '/nikhil-portfolio/images/partners/mckinsey-logo.png'
       }
     ] 
   },
   {
     name: 'Epson',
-    logo: '/images/companies/epson-logo.png',
+    logo: '/nikhil-portfolio/images/companies/epson-logo.png',
     url: 'https://epson.com',
     role: 'MBA PM Intern',
     period: 'Summer 2024',
