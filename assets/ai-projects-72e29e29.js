@@ -1,0 +1,7 @@
+const e=[{id:"ai-1",title:"MVP: SMB Compliance Discovery Platform (Built with Replit + AI Tools)",description:`Built a working MVP in a week using Replit and ChatGPT for my MBA class on Online Marketplaces.
+The tool helps Berkeley small businesses discover relevant government schemes and compliance requirements based on industry and size.
+Used:
+🧠 ChatGPT for deep research into government schemes and regulatory data
+💻 Replit for fast prototyping and hosting
+🛠️ Structured data into searchable JSON to simulate a discovery engine
+Showcasing how I use AI tools not just to brainstorm — but to build.`,image:"/nikhil-portfolio/images/ai-project-1.jpg",link:"https://smb-compliance-app.replit.app/",tags:["MVP","Replit","SMBs","Compliance"]},{id:"ai-2",title:"AI Profile Finder",description:"AI-powered tool to search structured candidate profiles with natural language. Built for recruiters.",image:"/nikhil-portfolio/images/ai-project-2.jpg",link:"https://ai-talent-scout-nikhild.replit.app/",tags:["MVP","OpenAI","Replit","Supabase","Recruitment"]},{id:"ai-3",title:"A Jaw Breaking Birthday! (Comic Strip)",description:"Storytelling meets AI — Midjourney helped me visualize this personal (and slightly ridiculous) episode.",image:"/nikhil-portfolio/images/jaw-breaking-birthday2.jpg",link:"https://www.canva.com/design/DAGjzE3KU_M/uAAXGcjjJu9YQiqmK8cYHQ/view?utm_content=DAGjzE3KU_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc4b09f2a10",tags:["Midjourney","Comic Strip","Storytelling through AI"]}];export{e as default};
