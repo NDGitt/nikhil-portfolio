@@ -126,7 +126,7 @@ const DesktopView = () => {
                     className="flex-shrink-0"
                   >
                     <img
-                      src="/images/profile.jpg"
+                      src="/nikhil-portfolio/images/profile.jpg"
                       alt="Nikhil Devgan"
                       className="w-40 h-40 rounded-2xl object-cover shadow-lg ring-4 ring-white"
                     />
