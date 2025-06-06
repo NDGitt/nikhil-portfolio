@@ -56,7 +56,7 @@ export const companies: Company[] = [
     name: 'Vellom',
     logo: '/images/companies/vellom-logo.png',
     url: 'https://vellom.com',
-    role: 'Independent Consultant - Product & Ops Strategy',
+    role: 'Independent Consultant · Product & Ops Strategy',
     period: '2022-2023',
     impact: {
       other: [

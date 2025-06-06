@@ -156,7 +156,7 @@ const DesktopView = () => {
                         </svg>
                       </motion.a>
                       <motion.a
-                        href="/resume.pdf"
+                        href="https://drive.google.com/file/d/176hdb5OGgcbQEF-RLtj9znTMb3p7cVAW/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-4 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg hover:from-indigo-600 hover:to-purple-600 transition-all text-sm font-medium shadow-sm"

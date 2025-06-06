@@ -162,6 +162,7 @@ const MobileView = () => {
               id={section.id}
               title={section.title}
               color={section.color}
+              isMobile={true}
             />
           )
         ));

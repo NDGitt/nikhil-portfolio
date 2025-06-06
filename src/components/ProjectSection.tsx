@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
+import MobileProjectCard from './MobileProjectCard'
 import useProjects from '../hooks/useProjects'
 
 interface ProjectSectionProps {
   id: string
   title: string
   color: string
+  isMobile?: boolean
 }
 
-const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
+const ProjectSection = ({ id, title, color, isMobile = false }: ProjectSectionProps) => {
   const projects = useProjects(id)
 
   const containerVariants = {
@@ -26,14 +28,14 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
       {/* Decorative line */}
       <div className="absolute left-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       
-      <div className="flex flex-col lg:flex-row gap-12">
+      <div className={`flex flex-col ${!isMobile ? 'lg:flex-row gap-12' : 'gap-6'}`}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="lg:w-1/4 lg:sticky lg:top-24 self-start space-y-6"
+          className={`${!isMobile ? 'lg:w-1/4 lg:sticky lg:top-24 self-start' : ''} space-y-6`}
         >
           <div className="flex items-center space-x-4">
-            <h2 className="text-4xl font-bold heading-underline">
+            <h2 className={`${isMobile ? 'text-2xl' : 'text-4xl'} font-bold heading-underline`}>
               {title}
             </h2>
             <div className={`h-3 w-3 rounded-full ${color}`} />
@@ -41,7 +43,7 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
           
           <div className="prose prose-lg">
             <p className="text-gray-600">
-              {id === 'ai' && "Innovative AI solutions pushing boundaries of what's possible"}
+              {id === 'ai' && "Exploring AI through product builds, real use cases, and creative play"}
               {id === 'consulting' && "Strategic consulting delivering measurable impact"}
               {id === 'game' && "Growth Stories of Entrepreneurs from India's first SMB accelerator"}
               {id === 'social' && "Projects creating positive societal impact"}
@@ -61,7 +63,7 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className={`${!isMobile ? 'lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-4 px-4 -mx-4'}`}
         >
           {projects.slice(0, 3).map((project) => (
             <motion.div
@@ -70,9 +72,13 @@ const ProjectSection = ({ id, title, color }: ProjectSectionProps) => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
-              className="h-full"
+              className={isMobile ? 'w-full' : 'h-full'}
             >
-              <ProjectCard {...project} />
+              {isMobile ? (
+                <MobileProjectCard {...project} />
+              ) : (
+                <ProjectCard {...project} />
+              )}
             </motion.div>
           ))}
         </motion.div>
