@@ -4,6 +4,7 @@ import ProjectSection from './components/ProjectSection'
 import { BriefcaseIcon } from '@heroicons/react/24/outline'
 import ChatAssistant from './components/ChatAssistant'
 import ExperienceTimeline from './components/ExperienceTimeline'
+import CopyEmailButton from './components/CopyEmailButton'
 
 function App() {
   const [sections] = useState([
@@ -18,50 +19,17 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50">
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-4 py-3 text-sm">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
-            >
-              Top
-            </button>
-            <button
-              onClick={() => {
-                const element = document.getElementById('ai-assistant')
-                if (element) {
-                  const navHeight = 64; // Height of the navigation bar
-                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                  window.scrollTo({
-                    top: elementPosition - navHeight,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
-            >
-              🤖 AI Assistant
-            </button>
-            <button
-              onClick={() => {
-                const element = document.getElementById('professional-journey')
-                if (element) {
-                  const navHeight = 64; // Height of the navigation bar
-                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                  window.scrollTo({
-                    top: elementPosition - navHeight,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-              className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
-            >
-              💼 Professional Journey
-            </button>
-            {sections.map((section) => (
+          <div className="flex items-center justify-between py-3 text-sm">
+            <div className="flex items-center space-x-4">
               <button
-                key={section.id}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
+              >
+                Top
+              </button>
+              <button
                 onClick={() => {
-                  const element = document.getElementById(section.id)
+                  const element = document.getElementById('ai-assistant')
                   if (element) {
                     const navHeight = 64; // Height of the navigation bar
                     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
@@ -71,15 +39,65 @@ function App() {
                     });
                   }
                 }}
-                className={`px-4 py-2 rounded-full transition-all whitespace-nowrap min-w-fit ${
-                  section.id === 'ai' 
-                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-md hover:scale-105'
-                    : 'hover:bg-indigo-100 hover:text-indigo-700 text-gray-600'
-                }`}
+                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
               >
-                {section.id === 'ai' ? '✨ AI Projects' : section.title}
+                🤖 AI Assistant
               </button>
-            ))}
+              <button
+                onClick={() => {
+                  const element = document.getElementById('professional-journey')
+                  if (element) {
+                    const navHeight = 64; // Height of the navigation bar
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - navHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
+              >
+                💼 Professional Journey
+              </button>
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => {
+                    const element = document.getElementById(section.id)
+                    if (element) {
+                      const navHeight = 64; // Height of the navigation bar
+                      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                      window.scrollTo({
+                        top: elementPosition - navHeight,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }}
+                  className={`px-4 py-2 rounded-full transition-all whitespace-nowrap min-w-fit ${
+                    section.id === 'ai' 
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-md hover:scale-105'
+                      : 'hover:bg-indigo-100 hover:text-indigo-700 text-gray-600'
+                  }`}
+                >
+                  {section.id === 'ai' ? '✨ AI Projects' : section.title}
+                </button>
+              ))}
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <CopyEmailButton />
+              <a
+                href="https://calendar.app.google/2LiPjJjxMerFXNTV6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors whitespace-nowrap flex items-center space-x-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>Coffee Chat</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
