@@ -98,7 +98,7 @@ const MobileView = () => {
                   <span className="font-medium">LinkedIn</span>
                 </motion.a>
                 <motion.a
-                  href="/resume.pdf"
+                  href="https://khpdqxdcxwdjipozoirl.supabase.co/storage/v1/object/public/public-assets//Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center space-x-2 p-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg max-w-[140px] text-sm font-medium"
@@ -139,9 +139,9 @@ const MobileView = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white/80 backdrop-blur rounded-xl shadow-lg border border-indigo-100 p-4"
+            className="bg-white/80 backdrop-blur rounded-xl shadow-lg border border-indigo-100 py-2"
           >
-            <ChatAssistant />
+            <ChatAssistant isMobile={true} />
           </motion.div>
         );
       case 'experience':
