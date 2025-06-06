@@ -227,7 +227,7 @@ function App() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 640);
+      setIsMobile(window.innerWidth <= 768);  // Increased to 768px to support larger phones
     };
 
     checkMobile();
