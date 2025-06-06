@@ -55,7 +55,6 @@ const ExperienceTimeline: FC = () => {
                           key={i} 
                           className="flex items-start space-x-2.5 text-left"
                         >
-                          <span className="flex-shrink-0 w-1 h-1 rounded-full bg-indigo-400 mt-2" />
                           <span className="leading-relaxed">{achievement}</span>
                         </li>
                       ))}
@@ -106,7 +105,7 @@ const ExperienceTimeline: FC = () => {
                                   <img
                                     src={partner.logo}
                                     alt={partner.name}
-                                    className="h-16 w-auto object-contain opacity-100 transition-all duration-300"
+                                    className="h-20 w-auto object-contain opacity-100 transition-all duration-300"
                                   />
                                 </div>
                                 <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">

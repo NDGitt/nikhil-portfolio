@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import ProjectSection from './components/ProjectSection'
 import { BriefcaseIcon } from '@heroicons/react/24/outline'
 import ChatAssistant from './components/ChatAssistant'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import CopyEmailButton from './components/CopyEmailButton'
+import MobileView from './components/MobileView'
 
-function App() {
+const DesktopView = () => {
   const [sections] = useState([
     { id: 'ai', title: 'AI Projects', color: 'bg-indigo-500' },
     // { id: 'consulting', title: 'Consulting Projects', color: 'bg-emerald-500' },
@@ -219,6 +220,22 @@ function App() {
       </footer>
     </div>
   )
+}
+
+function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile ? <MobileView /> : <DesktopView />;
 }
 
 export default App 
