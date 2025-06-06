@@ -1,15 +1,24 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 
 interface Message {
-  role: 'user' | 'assistant'
-  content: string
+  role: 'user' | 'assistant';
+  content: string;
 }
+
+type TopicType = 'Work Experience' | 'Projects' | 'Skills' | 'MBA Journey' | 'Product Strategy'
+
+const EXAMPLE_QUESTIONS: Record<TopicType, string> = {
+  'Work Experience': 'What were your key achievements at ZS Associates?',
+  'Projects': 'Tell me about your most impactful product strategy project.',
+  'Skills': 'What are your core product management skills?',
+  'MBA Journey': 'Why did you choose Berkeley Haas for your MBA?',
+  'Product Strategy': 'How do you approach product-market fit?'
+};
 
 const ChatAssistant = () => {
   const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState('')
+  const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const chatEndRef = useRef<HTMLDivElement>(null)
 
@@ -28,12 +37,16 @@ const ChatAssistant = () => {
     scrollToBottom()
   }, [messages])
 
+  const handleTopicClick = (topic: TopicType) => {
+    setInputValue(EXAMPLE_QUESTIONS[topic]);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!input.trim() || isLoading) return
+    if (!inputValue.trim() || isLoading) return
 
-    const userMessage = input.trim()
-    setInput('')
+    const userMessage = inputValue.trim()
+    setInputValue('')
     
     // Save current scroll position
     const currentScroll = window.scrollY
@@ -77,17 +90,57 @@ const ChatAssistant = () => {
       animate={{ opacity: 1, y: 0 }}
       className="relative"
     >
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        Nikhil's Custom AI Assistant
-      </h3>
-
-      <div className="bg-gray-100/50 rounded-lg p-4 mb-4">
-        <p className="text-gray-600">
-          Ask me anything about my work, projects, or fit for your team
-        </p>
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Ask me anything!
+          </h2>
+          <p className="text-gray-600 mt-2">
+            I'm Nikhil's AI assistant, trained on his experience and expertise. Try asking about:
+          </p>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {Object.keys(EXAMPLE_QUESTIONS).map((topic) => (
+              <motion.button
+                key={topic}
+                onClick={() => handleTopicClick(topic as TopicType)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-3 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-sm font-medium hover:bg-indigo-100 transition-colors flex items-center space-x-1"
+              >
+                <span>{topic}</span>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5 }}
+          className="hidden lg:block"
+        >
+          <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl shadow-lg flex items-center justify-center">
+            <span className="text-3xl">🤖</span>
+          </div>
+        </motion.div>
       </div>
 
-      <div className="space-y-4 mb-4 max-h-96 overflow-y-auto">
+      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 mb-4">
+        <div className="flex items-start space-x-3">
+          <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+            <span className="text-lg">💡</span>
+          </div>
+          <div>
+            <p className="text-gray-600">
+              "Hi! Click any topic above for example questions, or ask me anything about Nikhil's experience and skills!"
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4 mb-4 max-h-[300px] overflow-y-auto">
         {messages.map((message, index) => (
           <motion.div
             key={index}
@@ -97,52 +150,36 @@ const ChatAssistant = () => {
             className={`flex items-start space-x-2 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {message.role === 'assistant' && (
-              <div className="flex-shrink-0 text-xl mt-1">🤖</div>
+              <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                <span className="text-lg">🤖</span>
+              </div>
             )}
             <div
-              className={`max-w-[80%] rounded-lg p-3 ${
+              className={`max-w-[80%] rounded-xl p-3 ${
                 message.role === 'user'
                   ? 'bg-indigo-500 text-white'
-                  : 'bg-white text-gray-800'
+                  : 'bg-white shadow-sm border border-indigo-100 text-gray-800'
               }`}
             >
               {message.content}
             </div>
           </motion.div>
         ))}
-        {isLoading && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex items-start space-x-2"
-          >
-            <div className="flex-shrink-0 text-xl mt-1">🤖</div>
-            <div className="bg-white text-gray-800 rounded-lg p-3">
-              <div className="flex space-x-2">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
-              </div>
-            </div>
-          </motion.div>
-        )}
-        <div ref={chatEndRef} />
       </div>
 
-      <form onSubmit={handleSubmit} className="flex space-x-2">
+      <form onSubmit={handleSubmit} className="relative">
         <input
           type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your question..."
-          className="flex-1 rounded-lg border border-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Ask me anything about Nikhil..."
+          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         />
-        <button
+        <button 
           type="submit"
-          disabled={isLoading}
-          className="bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
         >
-          <PaperAirplaneIcon className="w-5 h-5" />
+          Ask
         </button>
       </form>
     </motion.div>

@@ -5,8 +5,6 @@ interface Company {
   role?: string;
   period?: string;
   impact?: {
-    value?: number;  // in millions
-    families?: number;
     other?: string[];
   };
 }
@@ -14,37 +12,56 @@ interface Company {
 export const companies: Company[] = [
   {
     name: 'ZS Associates',
-    logo: '/images/companies/company1.png',  // Add your company logo here
+    logo: '/images/companies/zs-logo.png',
     url: 'https://www.zs.com',
     role: 'Associate Consultant',
     period: '2016-2020',
     impact: {
-      value: 100,
-      families: 512000,
       other: [
         'Led strategic initiatives across pharmaceutical industry',
-        'Developed innovative analytics solutions'
+        'Developed innovative analytics solutions for Fortune 500 clients'
       ]
     }
   },
   {
-    name: 'GAME',
-    logo: '/images/companies/company2.png',
+    name: 'Global Alliance for Mass Entrepreneurship (GAME)',
+    logo: '/images/companies/game-logo.png',
     url: 'https://massentrepreneurship.org',
     role: 'Product Owner',
     period: '2020-2022',
     impact: {
-      value: 60,
-      families: 2000,
       other: [
         'Built India\'s first SMB Accelerator',
-        'Launched multiple successful products'
+        'Launched multiple successful products reaching 2000+ entrepreneurs'
       ]
     }
   },
-
-  
-  // Add more companies as needed...
+  {
+    name: 'Vellom',
+    logo: '/images/companies/vellom-logo.png',
+    url: 'https://vellom.com',
+    role: 'Product Strategy Lead',
+    period: '2022-2023',
+    impact: {
+      other: [
+        'Led product strategy for AI-powered compliance platform',
+        'Drove 3x growth in user engagement metrics'
+      ]
+    }
+  },
+  {
+    name: 'Epson',
+    logo: '/images/companies/epson-logo.png',
+    url: 'https://epson.com',
+    role: 'MBA Product Management Intern',
+    period: 'Summer 2023',
+    impact: {
+      other: [
+        'Developing go-to-market strategy for new product line',
+        'Leading cross-functional teams for product launch'
+      ]
+    }
+  }
 ];
 
 // You can add more companies by following the same format above
