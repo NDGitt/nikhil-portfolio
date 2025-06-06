@@ -80,7 +80,7 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
     setIsLoading(true)
 
     try {
-      const response = await fetch('https://dad188d4-b4ce-4780-9cea-36c4bf757d01-00-30i5h0vnnnt5u.picard.replit.dev/ask', {
+      const response = await fetch('https://nikhil-ai-assistant-backend.replit.app/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
