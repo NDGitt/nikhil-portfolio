@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import ProjectSection from './components/ProjectSection'
 import { BriefcaseIcon } from '@heroicons/react/24/outline'
 import ChatAssistant from './components/ChatAssistant'
 import ExperienceTimeline from './components/ExperienceTimeline'
-import CopyEmailButton from './components/CopyEmailButton'
 import MobileView from './components/MobileView'
 
 const DesktopView = () => {
@@ -16,12 +15,20 @@ const DesktopView = () => {
     // { id: 'other', title: 'Other Things', color: 'bg-rose-500' },
   ])
 
+  const [showCopied, setShowCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('nikhil_devgan@berkeley.edu');
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50">
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-3 text-sm">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap justify-between items-start gap-y-2 py-3 text-sm">
+            <div className="flex flex-wrap min-w-0 grow items-center gap-2">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
@@ -32,7 +39,7 @@ const DesktopView = () => {
                 onClick={() => {
                   const element = document.getElementById('ai-assistant')
                   if (element) {
-                    const navHeight = 64; // Height of the navigation bar
+                    const navHeight = document.querySelector('nav')?.offsetHeight || 64;
                     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
                       top: elementPosition - navHeight,
@@ -48,7 +55,7 @@ const DesktopView = () => {
                 onClick={() => {
                   const element = document.getElementById('professional-journey')
                   if (element) {
-                    const navHeight = 64; // Height of the navigation bar
+                    const navHeight = document.querySelector('nav')?.offsetHeight || 64;
                     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
                       top: elementPosition - navHeight,
@@ -66,7 +73,7 @@ const DesktopView = () => {
                   onClick={() => {
                     const element = document.getElementById(section.id)
                     if (element) {
-                      const navHeight = 64; // Height of the navigation bar
+                      const navHeight = document.querySelector('nav')?.offsetHeight || 64;
                       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                       window.scrollTo({
                         top: elementPosition - navHeight,
@@ -85,8 +92,35 @@ const DesktopView = () => {
               ))}
             </div>
             
-            <div className="flex items-center space-x-4">
-              <CopyEmailButton />
+            <div className="flex items-center gap-4 shrink-0 whitespace-nowrap">
+              <div className="relative">
+                <motion.button
+                  onClick={handleCopyEmail}
+                  className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors whitespace-nowrap flex items-center gap-2"
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Email</span>
+                </motion.button>
+                <AnimatePresence>
+                  {showCopied && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      className="absolute left-1/2 -translate-x-1/2 -bottom-9 bg-white/90 backdrop-blur-sm text-gray-800 text-xs px-3 py-1.5 rounded-full shadow-lg border border-gray-100/50 flex items-center gap-1.5"
+                    >
+                      <svg className="w-3 h-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="font-medium">Email ID copied</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <a
                 href="https://calendar.app.google/2LiPjJjxMerFXNTV6"
                 target="_blank"
@@ -101,7 +135,7 @@ const DesktopView = () => {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
@@ -111,7 +145,7 @@ const DesktopView = () => {
           className="max-w-7xl mx-auto space-y-16"
         >
           {/* Hero Section - AI Assistant */}
-          <div id="ai-assistant" className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-6 mb-12">
+          <div id="ai-assistant" className="mt-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-6 mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Brief Intro - 4 columns */}
               <motion.div
