@@ -54,34 +54,35 @@ export const companies: Company[] = [
   },
   {
     name: 'Vellom',
-    logo: '/nikhil-portfolio/images/companies/vellom-logo.png',
+    logo: '/images/companies/vellom-logo.png',
     url: 'https://vellom.com',
-    role: 'Independent Consultant · Product & Ops Strategy',
+    role: 'Product Strategy Consultant',
     period: '2022-2023',
     impact: {
       other: [
-        '💼 Overhauled cash flow and HR systems for SMBs, cutting cash cycles by 60% and hiring time by 50%',
-        '📊 Uncovered $100M in untapped government funding; insights shaped national entrepreneurship strategy with McKinsey'
+        '📊 Uncovered $100M in untapped government funding; insights shaped national entrepreneurship strategy with McKinsey',
+        '🎯 Built product strategy for India\'s first SMB accelerator platform',
+        '🚀 Launched GTM programs driving $23M in revenue and 2,000+ jobs'
       ]
     },
     partners: [
       {
         name: 'McKinsey & Company',
-        logo: '/nikhil-portfolio/images/partners/mckinsey-logo.png'
+        logo: '/images/partners/mckinsey-logo.png'
       }
-    ] 
+    ]
   },
   {
     name: 'Epson',
-    logo: '/nikhil-portfolio/images/companies/epson-logo.png',
+    logo: '/images/companies/epson-logo.png',
     url: 'https://epson.com',
-    role: 'MBA PM Intern',
-    period: 'Summer 2024',
+    role: 'Product Strategy Intern',
+    period: 'Summer 2023',
     impact: {
       other: [
-        '📊 Defined GTM and pricing for $280M healthcare segment',
-        '📈 Built Excel-based KPIs and dashboards adopted by sales and marketing leaders',
-        '🤝 Proposed a vendor partnership model to grow scanner sales by 20% YoY'
+        '🎯 Led product strategy for new B2B printer line targeting SMBs',
+        '📈 Developed pricing and GTM strategy for $50M product line',
+        '🔍 Conducted market research and competitive analysis'
       ]
     }
   }
