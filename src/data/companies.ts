@@ -77,7 +77,7 @@ export const companies: Company[] = [
     logo: '/images/companies/epson-logo.png',
     url: 'https://epson.com',
     role: 'Product Strategy Intern',
-    period: 'Summer 2023',
+    period: 'Summer 2024',
     impact: {
       other: [
         '🎯 Led product strategy for new B2B printer line targeting SMBs',
