@@ -145,7 +145,7 @@ const DesktopView = () => {
           className="max-w-7xl mx-auto space-y-16"
         >
           {/* Hero Section - AI Assistant */}
-          <div id="ai-assistant" className="mt-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-6 mb-12">
+          <div id="ai-assistant" className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl border border-indigo-100 p-6 mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Brief Intro - 4 columns */}
               <motion.div
