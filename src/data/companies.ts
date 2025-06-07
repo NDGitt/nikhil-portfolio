@@ -56,7 +56,7 @@ export const companies: Company[] = [
     name: 'Vellom',
     logo: '/images/companies/vellom-logo.png',
     url: 'https://vellom.com',
-    role: 'Product Strategy Consultant',
+    role: 'Independent Consultant - Product and Strategy',
     period: '2022-2023',
     impact: {
       other: [
@@ -76,7 +76,7 @@ export const companies: Company[] = [
     name: 'Epson',
     logo: '/images/companies/epson-logo.png',
     url: 'https://epson.com',
-    role: 'Product Strategy Intern',
+    role: 'Product Management MBA Intern',
     period: 'Summer 2024',
     impact: {
       other: [
