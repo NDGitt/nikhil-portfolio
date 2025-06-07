@@ -16,7 +16,7 @@ interface Company {
 export const companies: Company[] = [
   {
     name: 'ZS Associates',
-    logo: '/nikhil-portfolio/images/companies/zs-logo.png',
+    logo: '/images/companies/zs-logo.png',
     url: 'https://www.zs.com',
     role: 'Associate Consultant',
     period: '2016-2020',
@@ -30,7 +30,7 @@ export const companies: Company[] = [
   },
   {
     name: 'Global Alliance for Mass Entrepreneurship (GAME)',
-    logo: '/nikhil-portfolio/images/companies/game-logo.png',
+    logo: '/images/companies/game-logo.png',
     url: 'https://massentrepreneurship.org',
     role: 'Senior Product Manager',
     period: '2020-2022',
@@ -44,11 +44,11 @@ export const companies: Company[] = [
     partners: [
       {
         name: 'Bill & Melinda Gates Foundation',
-        logo: '/nikhil-portfolio/images/partners/gates-foundation-logo.png'
+        logo: '/images/partners/gates-foundation-logo.png'
       },
       {
         name: 'Rockefeller Foundation',
-        logo: '/nikhil-portfolio/images/partners/rockefeller-logo.png'
+        logo: '/images/partners/rockefeller-logo.png'
       }
     ]
   },

@@ -3,7 +3,7 @@
     "id": "game-1",
     "title": "Beating China at its Own Game",
     "description": "Led an entrepreneurship accelerator program in Ludhiana, helping local manufacturers compete globally. Highlight story: Worked with AStar Clothing to develop India's first locally manufactured baby sleeping bags, competing successfully with Chinese imports on both cost and quality. Impact: 100% business growth in one year, reduced employee attrition, and created new manufacturing capabilities in India.",
-    "image": "/nikhil-portfolio/images/game-china.jpg",
+    "image": "/images/game-china.jpg",
     "link": "https://www.linkedin.com/pulse/beating-china-its-own-game-nikhil-devgan",
     "tags": ["Manufacturing", "Innovation", "Growth"],
     "metrics": {
@@ -15,7 +15,7 @@
     "id": "game-2",
     "title": "IT Innovation in Punjab",
     "description": "Mentored IT entrepreneurs in Ludhiana through GAME's accelerator program, focusing on building sustainable tech businesses. Key achievement: Helped transform traditional businesses with modern IT solutions, enabling local entrepreneurs to compete in the digital economy while maintaining their cultural identity and values.",
-    "image": "/nikhil-portfolio/images/game-it.jpg",
+    "image": "/images/game-it.jpg",
     "link": "https://www.linkedin.com/pulse/real-life-rocket-singh-nikhil-devgan",
     "tags": ["Technology", "Digital Transformation", "Mentorship"],
     "metrics": {
@@ -27,12 +27,26 @@
     "id": "game-3",
     "title": "Steel Industry Transformation",
     "description": "Worked with steel manufacturing entrepreneurs to modernize operations and scale businesses. Notable success: Guided steel manufacturers in adopting innovative practices, improving operational efficiency, and expanding market reach. Focus on sustainable growth and modern manufacturing practices.",
-    "image": "/nikhil-portfolio/images/game-steel.jpg",
+    "image": "/images/game-steel.jpg",
     "link": "https://www.linkedin.com/pulse/next-big-indian-steel-company-nikhil-devgan",
     "tags": ["Steel Manufacturing", "Modernization", "Scale"],
     "metrics": {
       "industry": "Steel Manufacturing",
       "focus": "Operational Excellence"
     }
+  },
+  {
+    "title": "SMB Accelerator Platform",
+    "description": "Built India's first SMB Accelerator platform, backed by Gates & Rockefeller Foundation. The platform helps small businesses grow through personalized recommendations, expert connections, and access to resources.",
+    "image": "/images/smb-accelerator.png",
+    "tags": ["Product Strategy", "B2B", "SMB Growth"],
+    "link": "https://massentrepreneurship.org/accelerator"
+  },
+  {
+    "title": "GTM & Revenue Programs",
+    "description": "Launched go-to-market programs that drove $23M in revenue for SMBs and created 2,000+ jobs. Scaled platform monetization from 0 to $200K ARR through strategic pricing and partnerships.",
+    "image": "/images/gtm-programs.png",
+    "tags": ["GTM Strategy", "Revenue Growth", "Partnerships"],
+    "link": "https://massentrepreneurship.org/impact"
   }
 ] 
