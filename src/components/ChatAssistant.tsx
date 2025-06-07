@@ -238,7 +238,9 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Ask me anything about Nikhil..."
-            className={`w-full px-4 ${isMobile ? 'py-2.5 text-sm' : 'py-3'} rounded-xl bg-gray-50 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50`}
+            className={`w-full px-4 pr-[4.5rem] ${
+              isMobile ? 'py-2.5 text-sm' : 'py-3'
+            } rounded-xl bg-gray-50 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50`}
             disabled={isLoading}
           />
           <button 
@@ -248,7 +250,7 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
               isMobile ? 'px-3 py-1 text-sm' : 'px-4 py-1.5'
             } bg-indigo-600 text-white rounded-lg transition-all ${
               isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-indigo-700'
-            }`}
+            } min-w-[60px]`}
           >
             Ask
           </button>
