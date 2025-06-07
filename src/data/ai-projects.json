@@ -22,19 +22,5 @@
     "image": "/images/jaw-breaking-birthday2.jpg",
     "link": "https://www.canva.com/design/DAGjzE3KU_M/uAAXGcjjJu9YQiqmK8cYHQ/view?utm_content=DAGjzE3KU_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc4b09f2a10",
     "tags": ["Midjourney","Comic Strip","Storytelling through AI"]
-  },
-  {
-    "title": "AI Resume Matcher",
-    "description": "Built an AI-powered resume matching tool that helps job seekers identify their fit with job descriptions. Uses OpenAI embeddings and cosine similarity to analyze resumes against job requirements.",
-    "image": "/images/ai-resume-matcher.png",
-    "tags": ["OpenAI", "Python", "FastAPI", "React"],
-    "link": "https://github.com/nikhildevgan/ai-resume-matcher"
-  },
-  {
-    "title": "AI Portfolio Assistant",
-    "description": "Created an interactive AI assistant that can answer questions about my professional experience, projects, and skills. Uses a custom-trained model on my background.",
-    "image": "/images/ai-portfolio.png",
-    "tags": ["LangChain", "OpenAI", "React", "Node.js"],
-    "link": "https://github.com/nikhildevgan/portfolio-ai-assistant"
   }
 ] 

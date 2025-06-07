@@ -34,19 +34,5 @@
       "industry": "Steel Manufacturing",
       "focus": "Operational Excellence"
     }
-  },
-  {
-    "title": "SMB Accelerator Platform",
-    "description": "Built India's first SMB Accelerator platform, backed by Gates & Rockefeller Foundation. The platform helps small businesses grow through personalized recommendations, expert connections, and access to resources.",
-    "image": "/images/smb-accelerator.png",
-    "tags": ["Product Strategy", "B2B", "SMB Growth"],
-    "link": "https://massentrepreneurship.org/accelerator"
-  },
-  {
-    "title": "GTM & Revenue Programs",
-    "description": "Launched go-to-market programs that drove $23M in revenue for SMBs and created 2,000+ jobs. Scaled platform monetization from 0 to $200K ARR through strategic pricing and partnerships.",
-    "image": "/images/gtm-programs.png",
-    "tags": ["GTM Strategy", "Revenue Growth", "Partnerships"],
-    "link": "https://massentrepreneurship.org/impact"
   }
 ] 
