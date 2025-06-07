@@ -10,5 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/nikhil-portfolio/' // Change this to match your GitHub repository name
+  base: '/' // Change this to match your GitHub repository name
 }) 
