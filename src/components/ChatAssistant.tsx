@@ -15,7 +15,6 @@ const EXAMPLE_QUESTIONS: Record<TopicType, string[]> = {
     'How did his consulting experience shape his product mindset?'
   ],
   'Projects': [
-    'Tell me about your most impactful product strategy project.',
     'What\'s an AI tool you built recently?',
     'What was the resume matching tool built for?',
     'What inspired the SMB compliance discovery platform?'
@@ -27,13 +26,11 @@ const EXAMPLE_QUESTIONS: Record<TopicType, string[]> = {
     'How do you approach ambiguity?'
   ],
   'MBA Journey': [
-    'Why did you pursue an MBA at Berkeley?',
     'What was your biggest learning at Haas?',
     'How did you use AI tools during your MBA?',
     'What\'s a favorite class project you worked on?'
   ],
   'Product Strategy': [
-    'What\'s a product decision you\'re proud of?',
     'How did you design and scale the SMB accelerator?',
     'How do you approach GTM strategy?',
     'How have you used A/B testing or funnel analysis?'
