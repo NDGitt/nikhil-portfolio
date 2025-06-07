@@ -116,12 +116,6 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
     scrollToBottom()
   }, [messages, isLoading])
 
-  const getRandomQuestion = (topic: TopicType) => {
-    const questions = EXAMPLE_QUESTIONS[topic];
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
-  };
-
   const handleTopicClick = (topic: TopicType) => {
     setActiveTopic(topic);
     setActiveQuestions(EXAMPLE_QUESTIONS[topic]);
