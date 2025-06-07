@@ -47,35 +47,44 @@ const MobileView = () => {
                   Explore my professional journey and projects through these interactive features:
                 </p>
                 <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
+                  <button
+                    onClick={() => setActiveSection('chat')}
+                    className="w-full flex items-start space-x-3 p-2 rounded-lg transition-colors hover:bg-indigo-50"
+                  >
                     <span className="flex-shrink-0 w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600">
                       🤖
                     </span>
-                    <div>
+                    <div className="text-left">
                       <p className="text-sm font-medium text-gray-900">AI Assistant</p>
                       <p className="text-xs text-gray-600">Chat with my AI assistant to learn about my experience, skills, and projects in an interactive way.</p>
                     </div>
-                  </div>
+                  </button>
                   
-                  <div className="flex items-start space-x-3">
+                  <button
+                    onClick={() => setActiveSection('experience')}
+                    className="w-full flex items-start space-x-3 p-2 rounded-lg transition-colors hover:bg-indigo-50"
+                  >
                     <span className="flex-shrink-0 w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600">
                       💼
                     </span>
-                    <div>
+                    <div className="text-left">
                       <p className="text-sm font-medium text-gray-900">Professional Journey</p>
                       <p className="text-xs text-gray-600">Explore my career timeline, from consulting at ZS to building India's first SMB Accelerator at GAME.</p>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
+                  </button>
+
+                  <button
+                    onClick={() => setActiveSection('ai')}
+                    className="w-full flex items-start space-x-3 p-2 rounded-lg transition-colors hover:bg-indigo-50"
+                  >
                     <span className="flex-shrink-0 w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600">
-                      ✨
+                      🚀
                     </span>
-                    <div>
+                    <div className="text-left">
                       <p className="text-sm font-medium text-gray-900">AI Projects</p>
-                      <p className="text-xs text-gray-600">Check out my latest AI projects, including an SMB Compliance Discovery Platform and AI Profile Finder.</p>
+                      <p className="text-xs text-gray-600">Check out my latest AI projects and experiments.</p>
                     </div>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
