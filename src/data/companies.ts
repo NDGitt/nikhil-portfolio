@@ -36,7 +36,7 @@ export const companies: Company[] = [
     period: '2020-2022',
     impact: {
       other: [
-        '🚀 Built India\'s first SMB Accelerator, backed by Gates & Rockefeller Foundation',
+        '🚀 Built India\'s first SMB (Small and Medium-sized Business) Accelerator, backed by Gates & Rockefeller Foundation',
         '📈 Launched GTM programs that drove $23M in revenue and created 2,000+ jobs',
         '💰 Scaled monetization from 0 to $200K ARR through pricing, partnerships, and B2B strategy'
       ]
@@ -60,9 +60,8 @@ export const companies: Company[] = [
     period: '2022-2023',
     impact: {
       other: [
-        '📊 Uncovered $100M in untapped government funding; insights shaped national entrepreneurship strategy with McKinsey',
-        '🎯 Built product strategy for India\'s first SMB accelerator platform',
-        '🚀 Launched GTM programs driving $23M in revenue and 2,000+ jobs'
+        '💼 Overhauled cash flow and HR systems for SMBs, cutting cash cycles by 60% and hiring time by 50%',
+        '📊 Uncovered $100M in untapped government funding; insights shaped national entrepreneurship strategy with McKinsey'
       ]
     },
     partners: [
