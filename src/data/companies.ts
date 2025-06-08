@@ -80,7 +80,7 @@ export const companies: Company[] = [
     impact: {
       other: [
         '📊 Defined GTM & pricing for $280M healthcare scanner segment',
-        '📈 📈 Built Excel KPI dashboards — adopted by sales & marketing leadership',
+        '📈 Built Excel KPI dashboards — adopted by sales & marketing leadership',
         '🤝 Proposed vendor partnership model — projected to grow scanner sales by 20% YoY'
       ]
     }
