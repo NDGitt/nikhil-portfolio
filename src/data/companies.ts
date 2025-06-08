@@ -36,7 +36,7 @@ export const companies: Company[] = [
     period: '2020-2022',
     impact: {
       other: [
-        '🚀 Built India\'s first SMB (Small and Medium-sized Business) Accelerator, backed by Gates & Rockefeller Foundation',
+        '🚀 Built India’s first accelerator for small and medium-sized businesses (SMBs), backed by the Gates and Rockefeller Foundations',
         '📈 Launched GTM programs that drove $23M in revenue and created 2,000+ jobs',
         '💰 Scaled monetization from 0 to $200K ARR through pricing, partnerships, and B2B strategy'
       ]
