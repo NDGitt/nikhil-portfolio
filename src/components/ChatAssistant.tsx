@@ -15,25 +15,25 @@ const EXAMPLE_QUESTIONS: Record<TopicType, string[]> = {
     'How did his consulting experience shape his product mindset?'
   ],
   'Projects': [
-    'What\'s an AI tool you built recently?',
+    'What\'s an AI tool Nikhil built recently?',
     'What was the resume matching tool built for?',
     'What inspired the SMB compliance discovery platform?'
   ],
   'Skills': [
-    'What are your strongest skills as a PM?',
-    'How have you used data to drive decision-making?',
-    'What\'s an example of stakeholder alignment in your work?',
-    'How do you approach ambiguity?'
+    'What are Nikhil\'s strongest skills as a PM?',
+    'How has Nikhil used data to drive decision-making?',
+    'What\'s an example of stakeholder alignment in Nikhil\'s work?',
+    'How does Nikhil approach ambiguity?'
   ],
   'MBA Journey': [
-    'What was your biggest learning at Haas?',
-    'How did you use AI tools during your MBA?',
-    'What\'s a favorite class project you worked on?'
+    'What was Nikhil\'s biggest learning at Haas?',
+    'How did Nikhil use AI tools during his MBA?',
+    'What\'s a favorite class project Nikhil worked on at Haas?'
   ],
   'Product Strategy': [
-    'How did you design and scale the SMB accelerator?',
-    'How do you approach GTM strategy?',
-    'How have you used A/B testing or funnel analysis?'
+    'How did Nikhil design and scale the SMB accelerator?',
+    'How does Nikhil approach GTM strategy?',
+    'How has Nikhil applied A/B testing or funnel analysis in his work?'
   ]
 };
 
