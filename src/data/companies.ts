@@ -79,9 +79,9 @@ export const companies: Company[] = [
     period: 'Summer 2024',
     impact: {
       other: [
-        '🎯 Led product strategy for new B2B printer line targeting SMBs',
-        '📈 Developed pricing and GTM strategy for $50M product line',
-        '🔍 Conducted market research and competitive analysis'
+        '📊 Defined GTM & pricing for $280M healthcare scanner segment',
+        '📈 📈 Built Excel KPI dashboards — adopted by sales & marketing leadership',
+        '🤝 Proposed vendor partnership model — projected to grow scanner sales by 20% YoY'
       ]
     }
   }
