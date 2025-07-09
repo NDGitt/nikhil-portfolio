@@ -148,7 +148,10 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: userMessage }),
+        body: JSON.stringify({ 
+          question: userMessage, 
+          debug: true // This enables logging in the replit console/backend
+          }),
       });
 
       if (!response.ok) throw new Error('Failed to get response');
