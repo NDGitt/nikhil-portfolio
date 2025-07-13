@@ -143,7 +143,7 @@ const ChatAssistant = ({ isMobile = false }: ChatAssistantProps) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://nikhil-ai-assistant-backend.replit.app/ask', {
+      const response = await fetch('https://nikhil-portfolio-aiassistant-backend-production.up.railway.app/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
