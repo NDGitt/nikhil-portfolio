@@ -61,7 +61,6 @@ export const companies: Company[] = [
     impact: {
       other: [
         '🤖 Built LLM-powered tools for SMBs, automating cash flow tracking, invoice parsing, and WhatsApp-based collections; reduced cash cycles by 60%',
-        '🧪 Ran iterative pilots with 15+ SMBs, refining UX and compliance to drive adoption and validate product-market fit',
         '⚙️ Deployed scalable AI workflows, processing PDFs and emails with GPT-3 to automate real-world business tasks'
       ]
     },
