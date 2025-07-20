@@ -12,7 +12,7 @@
     "title": "MVP: SMB Compliance Discovery Platform (Built with Replit + AI Tools)",
     "description": "Built a working MVP in a week using Replit and ChatGPT for my MBA class on Online Marketplaces.\nThe tool helps Berkeley small businesses discover relevant government schemes and compliance requirements based on industry and size.\nUsed:\n🧠 ChatGPT for deep research into government schemes and regulatory data\n💻 Replit for fast prototyping and hosting\n🛠️ Structured data into searchable JSON to simulate a discovery engine\nShowcasing how I use AI tools not just to brainstorm — but to build.",
     "image": "/images/ai-project-1.jpg",
-    "link": "https://smb-compliance-app.replit.app/",
+    "link": "https://ndgitt.github.io/SMBComplianceHub/",
     "tags": ["MVP", "Replit", "SMBs","Compliance"]
   },
   {
