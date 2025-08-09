@@ -23,6 +23,8 @@ const ProjectSection = ({ id, title, color, isMobile = false }: ProjectSectionPr
     }
   }
 
+  const visibleProjects = id === 'ai' ? projects : projects.slice(0, 3)
+
   return (
     <section id={id} className="relative py-16">
       {/* Decorative line */}
@@ -65,7 +67,7 @@ const ProjectSection = ({ id, title, color, isMobile = false }: ProjectSectionPr
           animate="visible"
           className={`${!isMobile ? 'lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-4 px-4 -mx-4'}`}
         >
-          {projects.slice(0, 3).map((project) => (
+          {visibleProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={{
