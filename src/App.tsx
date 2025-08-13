@@ -122,7 +122,7 @@ const DesktopView = () => {
                 </AnimatePresence>
               </div>
               <a
-                href="https://calendar.app.google/2LiPjJjxMerFXNTV6"
+                href="https://topmate.io/nikhil_devgan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors whitespace-nowrap flex items-center space-x-2"
