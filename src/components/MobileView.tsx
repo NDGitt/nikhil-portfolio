@@ -126,7 +126,7 @@ const MobileView = () => {
                   <MobileEmailButton />
                 </div>
                 <motion.a
-                  href="https://calendar.app.google/2LiPjJjxMerFXNTV6"
+                  href="https://topmate.io/nikhil_devgan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center space-x-2 p-2 bg-indigo-600 text-white rounded-lg max-w-[140px] text-sm font-medium"
