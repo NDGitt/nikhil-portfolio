@@ -17,7 +17,7 @@
   },
   {
     "id": "ai-5",
-    "title": "Daily Task Manager (AI-Assisted)",
+    "title": "Daily Task Manager App (AI-Assisted)",
     "description": "Write today’s list, tick things off, and keep momentum. \n Clean by default; optional AI nudges appear only when useful.",
     "image": "/images/ai-project-5.jpg",
     "link": "https://daily-task-manager-bddu.vercel.app/",

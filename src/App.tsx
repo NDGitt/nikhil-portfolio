@@ -218,6 +218,13 @@ const DesktopView = () => {
             </div>
           </div>
 
+          {/* AI Projects Section */}
+          <ProjectSection
+            id="ai"
+            title="AI Projects"
+            color="bg-indigo-500"
+          />
+
           {/* Experience Timeline Section */}
           <motion.div
             id="professional-journey"
@@ -233,15 +240,23 @@ const DesktopView = () => {
             <ExperienceTimeline />
           </motion.div>
 
+          {/* SMB Accelerator Section */}
+          <ProjectSection
+            id="game"
+            title="Building India's first SMB Accelerator"
+            color="bg-violet-500"
+          />
+
+          {/* Commented out the project section to have AI projects right below the AI Assistant section, and SMB Accelerator right below the Professional Journey section */}
           {/* Project Sections */}
-          {sections.map((section) => (
+         {/* {sections.map((section) => (
             <ProjectSection
               key={section.id}
               id={section.id}
               title={section.title}
               color={section.color}
             />
-          ))}
+          ))} */}
         </motion.div>
       </main>
       
