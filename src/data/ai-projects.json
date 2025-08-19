@@ -16,6 +16,14 @@
     "tags": ["MVP","OpenAI", "Replit","Supabase","Recruitment"]
   },
   {
+    "id": "ai-5",
+    "title": "Daily Task Manager (AI-Assisted)",
+    "description": "Write today’s list, tick things off, and keep momentum. \n Clean by default; optional AI nudges appear only when useful.",
+    "image": "/images/ai-project-5.jpg",
+    "link": "https://daily-task-manager-bddu.vercel.app/",
+    "tags": ["Progressive Web App (PWA)","Minimal Design", "React","AI Ready","Productivity"]
+  },
+  {
     "id": "ai-3",
     "title": "A Jaw Breaking Birthday! (Comic Strip)",
     "description": "Storytelling meets AI — Midjourney helped me visualize this personal (and slightly ridiculous) episode.",
@@ -25,7 +33,7 @@
   },
   {
     "id": "ai-1",
-    "title": "MVP: SMB Compliance Discovery Platform (Built with Replit + AI Tools)",
+    "title": "MVP: SMB Compliance Discovery Platform",
     "description": "Built a working MVP in a week using Replit and ChatGPT for my MBA class on Online Marketplaces.\nThe tool helps Berkeley small businesses discover relevant government schemes and compliance requirements based on industry and size.\nUsed:\n🧠 ChatGPT for deep research into government schemes and regulatory data\n💻 Replit for fast prototyping and hosting\n🛠️ Structured data into searchable JSON to simulate a discovery engine\nShowcasing how I use AI tools not just to brainstorm — but to build.",
     "image": "/images/ai-project-1.jpg",
     "link": "https://ndgitt.github.io/SMBComplianceHub/",
