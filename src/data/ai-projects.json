@@ -4,7 +4,7 @@
     "title": "Resume Automation with n8n + AI Agent",
     "description": "End-to-end system that builds hyper personalized resumes in <1 minute using n8n orchestration, an AI agent, and a suite of Google Products",
     "image": "/images/resume-automation-thumbnail.png",
-    "link": "/case-studies/resume-automation/index.html",
+    "link": "/AIResume/index.html",
     "tags": ["Automation", "n8n", "AI Agent", "Chrome Extension", "Google Apps Script"]
   },
   {
