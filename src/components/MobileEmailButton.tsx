@@ -33,7 +33,7 @@ const MobileEmailButton = () => {
     <>
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="w-full flex items-center justify-center space-x-2 p-2 bg-gray-800 text-white rounded-lg text-sm font-medium"
+        className="w-full flex items-center justify-center space-x-1.5 px-2 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
