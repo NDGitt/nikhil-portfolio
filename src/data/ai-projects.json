@@ -13,7 +13,7 @@
     "description": "AI-powered tool to search structured candidate profiles with natural language. Built for recruiters.",
     "image": "/images/ai-project-2.jpg",
     "link": "https://www.nikhildevgan.com/AITalentFinder",
-    "tags": ["MVP","OpenAI", "Replit","Supabase","Recruitment"]
+    "tags": ["MVP","OpenAI", "Cursor","Supabase","Recruitment"]
   },
   {
     "id": "ai-5",
