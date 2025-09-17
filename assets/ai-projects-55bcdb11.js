@@ -5,4 +5,4 @@ Used:
 🧠 ChatGPT for deep research into government schemes and regulatory data
 💻 Replit for fast prototyping and hosting
 🛠️ Structured data into searchable JSON to simulate a discovery engine
-Showcasing how I use AI tools not just to brainstorm — but to build.`,image:"/images/ai-project-1.jpg",link:"https://ndgitt.github.io/SMBComplianceHub/",tags:["MVP","Replit","SMBs","Compliance"]}];export{e as default};
+Showcasing how I use AI tools not just to brainstorm — but to build.`,image:"/images/ai-project-1.jpg",link:"https://ndgitt.github.io/SMBComplianceHub/",tags:["MVP","Replit","SMBs","Compliance"]},{id:"ai-6",title:"AI Thought Logger with n8n",description:"An AI thought-logging system that transforms fleeting ideas into an organized, searchable knowledge base for effortless recall.",image:"/images/ai-thought-logger.jpg",link:"/AIThoughtLogger/index.html",tags:["OpenAI Whisper","n8n","Telegram","Automation","Productivity"]}];export{e as default};
