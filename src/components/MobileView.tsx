@@ -47,24 +47,6 @@ const MobileView = () => {
                   Explore my professional journey and projects through these interactive features:
                 </p>
                 <div className="space-y-3">
-                  {/* High Priority: AI Assistant */}
-                  <motion.button
-                    onClick={() => setActiveSection('chat')}
-                    className="w-full bg-indigo-50 border border-indigo-200 p-4 rounded-lg shadow-sm transition-all hover:bg-indigo-100 hover:border-indigo-300 hover:shadow-md"
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <span className="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 text-lg">
-                        🤖
-                      </span>
-                      <div className="text-left flex-1">
-                        <p className="text-base font-semibold text-gray-900">AI Assistant</p>
-                        <p className="text-sm text-gray-600">Ask about my experience & projects</p>
-                      </div>
-                    </div>
-                  </motion.button>
-                  
                   {/* High Priority: AI Projects */}
                   <motion.button
                     onClick={() => setActiveSection('ai')}
@@ -79,6 +61,24 @@ const MobileView = () => {
                       <div className="text-left flex-1">
                         <p className="text-base font-semibold text-gray-900">AI Projects</p>
                         <p className="text-sm text-gray-600">5+ AI projects & automations</p>
+                      </div>
+                    </div>
+                  </motion.button>
+
+                  {/* High Priority: AI Assistant */}
+                  <motion.button
+                    onClick={() => setActiveSection('chat')}
+                    className="w-full bg-indigo-50 border border-indigo-200 p-4 rounded-lg shadow-sm transition-all hover:bg-indigo-100 hover:border-indigo-300 hover:shadow-md"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 text-lg">
+                        🤖
+                      </span>
+                      <div className="text-left flex-1">
+                        <p className="text-base font-semibold text-gray-900">AI Assistant</p>
+                        <p className="text-sm text-gray-600">Ask about my experience & projects</p>
                       </div>
                     </div>
                   </motion.button>
