@@ -68,28 +68,34 @@ const DesktopView = () => {
                 💼 Professional Journey
               </button>
               {sections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    const element = document.getElementById(section.id)
-                    if (element) {
-                      const navHeight = document.querySelector('nav')?.offsetHeight || 64;
-                      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                      window.scrollTo({
-                        top: elementPosition - navHeight,
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
-                  className={`px-4 py-2 rounded-full transition-all whitespace-nowrap min-w-fit ${
-                    section.id === 'ai' 
-                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-md hover:scale-105'
-                      : 'hover:bg-indigo-100 hover:text-indigo-700 text-gray-600'
-                  }`}
-                >
-                  {section.id === 'ai' ? '✨ AI Projects' : section.title}
-                </button>
+                section.id === 'ai' && (
+                  <button
+                    key={section.id}
+                    onClick={() => {
+                      const element = document.getElementById(section.id)
+                      if (element) {
+                        const navHeight = document.querySelector('nav')?.offsetHeight || 64;
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                          top: elementPosition - navHeight,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }}
+                    className="px-4 py-2 rounded-full transition-all whitespace-nowrap min-w-fit bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-md hover:scale-105"
+                  >
+                    ✨ AI Projects
+                  </button>
+                )
               ))}
+              <a
+                href="https://nikhildevgan.substack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full transition-colors hover:bg-indigo-100 hover:text-indigo-700 text-gray-600 whitespace-nowrap"
+              >
+                📝 Blog
+              </a>
             </div>
             
             <div className="flex items-center gap-4 shrink-0 whitespace-nowrap">
