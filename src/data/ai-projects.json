@@ -46,5 +46,13 @@
     "image": "/images/ai-thought-logger.jpg",
     "link": "/AIThoughtLogger/index.html",
     "tags": ["OpenAI Whisper", "n8n", "Telegram", "Automation", "Productivity"]
+  },
+  {
+    "id": "ai-7",
+    "title": "AI Email Manager with n8n",
+    "description": "Intelligent automation that categorizes emails, applies labels, and drafts AI responses.",
+    "image": "/EmailTriageWorkflow/images/thumbnail.png",
+    "link": "/EmailTriageWorkflow/index.html",
+    "tags": ["n8n", "Gmail API", "OpenAI", "Email Automation", "AI Agent", "Productivity"]
   }
 ]

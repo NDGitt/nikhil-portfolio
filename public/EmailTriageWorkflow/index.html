@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Manager Setup Guide | n8n Automation</title>
+    <meta name="description" content="Complete setup guide for creating an AI-powered email manager using n8n, Gmail, and OpenAI. No technical skills required.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen text-gray-800">
+    <!-- Scroll Progress Indicator -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 z-50 transition-all duration-300" id="scroll-progress" style="width: 0%"></div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-700 focus:outline-none z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-30">
+        <div class="max-w-4xl mx-auto px-4 py-4 sm:py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-2 sm:p-3 rounded-lg shadow-md">
+                        <i class="fas fa-envelope-open-text text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-3xl font-bold text-gray-900 leading-tight">AI Email Manager</h1>
+                        <p class="text-xs sm:text-sm text-gray-500 font-medium">Automated inbox triage with n8n</p>
+                    </div>
+                </div>
+                
+                <!-- Back to Main Website -->
+                <a href="/" 
+                   class="hidden sm:flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 group"
+                   title="Back to Portfolio">
+                    <i class="fas fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="text-sm font-medium">Back to Portfolio</span>
+                </a>
+                
+                <!-- Mobile Back Button -->
+                <a href="/" 
+                   class="sm:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                   title="Back to Portfolio">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+        
+        <!-- Introduction -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-4">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    No Coding Required
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Setup Guide: AI Email Manager</h2>
+                <p class="text-lg sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">Transform your chaotic inbox into an organized machine using AI automation.</p>
+                
+                <!-- Workflow Diagram Preview -->
+                <div class="mb-8 group">
+                    <div class="bg-gray-900 p-2 rounded-xl shadow-2xl overflow-hidden border border-gray-800 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+                        <div class="bg-gray-800/50 rounded-lg overflow-hidden relative">
+                            <img src="images/workflow.png" 
+                                 alt="AI Email Manager n8n Workflow Diagram" 
+                                 class="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
+                                 style="max-height: 450px;">
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent pointer-events-none"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4 italic">
+                        The complete automation: Gmail Trigger → AI Classification → Labeling → Drafting Replies
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 text-left sm:text-center">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        This workflow acts as your personal executive assistant. It reads every new email, 
+                        <strong>categorizes it</strong> into smart buckets (like "Job Apps" or "Newsletters"), 
+                        <strong>applies the right label</strong> in Gmail, and even <strong>drafts a professional reply</strong> 
+                        for emails that need your attention.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up delay-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center border-b border-gray-100 pb-4">
+                <i class="fas fa-check-double text-blue-600 mr-3"></i>
+                What You'll Need Before You Start
+            </h3>
+            
+            <div class="grid gap-4 sm:grid-cols-1">
+                <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
+                    <div class="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-red-500 border border-gray-100">
+                        <i class="fab fa-google text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">Gmail Account</h4>
+                        <p class="text-sm text-gray-600">Your primary email account where the magic happens.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-purple-300 transition-colors">
+                    <div class="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-purple-600 border border-gray-100">
+                        <i class="fas fa-cog text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">n8n Account</h4>
+                        <p class="text-sm text-gray-600">Free cloud account or self-hosted instance to run the workflow.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-green-300 transition-colors">
+                    <div class="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-green-600 border border-gray-100">
+                        <i class="fas fa-robot text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 mb-1">OpenAI API Key</h4>
+                        <p class="text-sm text-gray-600 mb-2">Powers the intelligence behind categorization and drafting.</p>
+                        <a href="https://platform.openai.com/api-keys" target="_blank" class="inline-flex items-center text-xs font-semibold text-green-700 bg-green-100 px-2 py-1 rounded hover:bg-green-200 transition-colors">
+                            <i class="fas fa-key mr-1"></i> Get API Key
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1: Prepare Gmail -->
+        <section id="step1" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">1</span>
+                <h3 class="text-2xl font-bold text-gray-900">Prepare Your Gmail Labels</h3>
+            </div>
+            
+            <div class="pl-12">
+                <p class="text-gray-600 mb-6">The AI needs specific buckets to sort your mail. Create these exact labels in Gmail:</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                    <div class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 text-blue-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Job Applications
+                    </div>
+                    <div class="flex items-center p-3 bg-green-50 rounded-lg border border-green-100 text-green-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> New Job Opportunities
+                    </div>
+                    <div class="flex items-center p-3 bg-purple-50 rounded-lg border border-purple-100 text-purple-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> To Respond
+                    </div>
+                    <div class="flex items-center p-3 bg-yellow-50 rounded-lg border border-yellow-100 text-yellow-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Meetings
+                    </div>
+                    <div class="flex items-center p-3 bg-pink-50 rounded-lg border border-pink-100 text-pink-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Events
+                    </div>
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 text-gray-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Newsletters / Marketing
+                    </div>
+                </div>
+                
+                <div class="flex items-start p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                    <i class="fas fa-info-circle text-blue-600 mt-1 mr-3"></i>
+                    <p class="text-sm text-blue-800">
+                        <strong>Pro Tip:</strong> You can nest these labels under a parent label like "AI Triage" to keep your sidebar clean!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Credentials -->
+        <section id="step2" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">2</span>
+                <h3 class="text-2xl font-bold text-gray-900">Connect Credentials in n8n</h3>
+            </div>
+            
+            <div class="pl-12">
+                <p class="text-gray-600 mb-4">Inside n8n, go to <strong>Credentials</strong> in the left sidebar and add:</p>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <i class="fab fa-google text-red-500 text-xl mr-4"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Gmail OAuth2</h4>
+                            <p class="text-xs text-gray-500">Follow n8n's guide to connect your Google account.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <i class="fas fa-robot text-green-600 text-xl mr-4"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-900">OpenAI API</h4>
+                            <p class="text-xs text-gray-500">Paste your API key (starts with sk-...).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Import -->
+        <section id="step3" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">3</span>
+                <h3 class="text-2xl font-bold text-gray-900">Import the Workflow</h3>
+            </div>
+            
+            <div class="pl-12">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 mb-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-file-code text-gray-500 mr-2"></i>
+                        Get the Workflow JSON
+                    </h4>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="workflow.json" download class="flex-1 inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all shadow-md group">
+                            <i class="fas fa-download mr-2 group-hover:-translate-y-0.5 transition-transform"></i>
+                            Download JSON
+                        </a>
+                        <button id="copy-workflow-btn" class="flex-1 inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all shadow-sm">
+                            <i class="fas fa-copy mr-2"></i>
+                            Copy to Clipboard
+                        </button>
+                    </div>
+                    <pre id="workflow-json" class="hidden">Loading...</pre>
+                </div>
+                
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 ml-1">
+                    <li>In n8n, click <strong>Workflows</strong> (top right) → <strong>Import from File/Clipboard</strong>.</li>
+                    <li>Paste the JSON or upload the file.</li>
+                    <li>The full graph will appear on your canvas.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Step 4: Final Config -->
+        <section id="step4" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">4</span>
+                <h3 class="text-2xl font-bold text-gray-900">Final Configuration</h3>
+            </div>
+            
+            <div class="pl-12">
+                <p class="text-gray-600 mb-4">
+                    You need to tell the AI which Gmail Label ID corresponds to which category.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+                        <p class="text-gray-600 text-sm">Open the <strong>"Main Email Agent"</strong> node.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+                        <p class="text-gray-600 text-sm">Scroll down to the system prompt.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+                        <p class="text-gray-600 text-sm">Replace the placeholder IDs (e.g., <code>"Label_123"</code>) with your actual Label IDs.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-gray-800 rounded-lg font-mono text-xs text-gray-300 overflow-x-auto border border-gray-700">
+                    <span class="text-purple-400">"JOB_APPLICATION_UPDATE"</span>: <span class="text-green-400">"Label_8274912..."</span>,<br>
+                    <span class="text-purple-400">"NEW_JOB_OPPORTUNITIES"</span>: <span class="text-green-400">"Label_9928371..."</span>
+                </div>
+
+                <div class="mt-6 flex items-center text-green-600 font-semibold bg-green-50 px-4 py-3 rounded-lg">
+                    <i class="fas fa-toggle-on text-xl mr-3"></i>
+                    Flip the switch to "Active" and you're live!
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Section -->
+        <section class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-8 mb-12 shadow-xl text-white text-center animate-fade-in-up delay-300">
+            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                <i class="fas fa-check text-3xl"></i>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">You're All Set!</h3>
+            <p class="text-lg text-green-50 mb-8 max-w-2xl mx-auto">
+                Your AI Email Manager is now running. It will check for new emails every minute, categorize them, and prepare draft responses for you.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">
+                    <i class="fas fa-clock text-2xl mb-2 opacity-80"></i>
+                    <h4 class="font-bold">Saves Time</h4>
+                    <p class="text-xs text-green-100 opacity-80">No more manual sorting</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">
+                    <i class="fas fa-brain text-2xl mb-2 opacity-80"></i>
+                    <h4 class="font-bold">Smart Drafting</h4>
+                    <p class="text-xs text-green-100 opacity-80">Replies ready to go</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">
+                    <i class="fas fa-check-double text-2xl mb-2 opacity-80"></i>
+                    <h4 class="font-bold">Zero Misses</h4>
+                    <p class="text-xs text-green-100 opacity-80">Catch every opportunity</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8 sm:py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-4 inline-block p-3 bg-blue-50 rounded-full">
+                <i class="fas fa-robot text-2xl text-blue-500"></i>
+            </div>
+            <p class="text-gray-900 font-bold text-lg mb-2">AI Email Manager Setup Guide</p>
+            <p class="text-gray-500 text-sm mb-6">Automate your inbox with n8n, Gmail, and OpenAI</p>
+            
+            <div class="border-t border-gray-100 pt-6">
+                <p class="text-gray-500 text-sm flex items-center justify-center gap-1">
+                    Built with <i class="fas fa-heart text-red-500 mx-1"></i> by 
+                    <a href="/" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">Nikhil Devgan</a>
+                </p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
