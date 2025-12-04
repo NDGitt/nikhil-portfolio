@@ -1,53 +1,110 @@
 // AI Email Manager - Interactive JavaScript
 
 // ============================================
-// 1. COPY WORKFLOW JSON TO CLIPBOARD
+// 1. SCROLL PROGRESS INDICATOR
 // ============================================
-const copyWorkflowBtn = document.getElementById('copy-workflow-btn');
-const workflowJsonElement = document.getElementById('workflow-json');
-
-// Load workflow JSON from external file
-async function loadWorkflowJson() {
-    try {
-        const response = await fetch('workflow.json');
-        const json = await response.json();
-        if (workflowJsonElement) {
-            workflowJsonElement.textContent = JSON.stringify(json, null, 2);
-        }
-    } catch (error) {
-        console.error('Error loading workflow JSON:', error);
+function updateScrollProgress() {
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
     }
 }
 
-// Copy workflow JSON to clipboard
-if (copyWorkflowBtn && workflowJsonElement) {
-    copyWorkflowBtn.addEventListener('click', async () => {
-        const workflowText = workflowJsonElement.textContent;
+window.addEventListener('scroll', updateScrollProgress);
+window.addEventListener('resize', updateScrollProgress);
 
+// ============================================
+// 2. BACK TO TOP BUTTON
+// ============================================
+const backToTopBtn = document.getElementById('back-to-top');
+
+function updateBackToTopButton() {
+    if (backToTopBtn) {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.remove('opacity-0', 'invisible');
+            backToTopBtn.classList.add('opacity-100');
+        } else {
+            backToTopBtn.classList.add('opacity-0', 'invisible');
+            backToTopBtn.classList.remove('opacity-100');
+        }
+    }
+}
+
+window.addEventListener('scroll', updateBackToTopButton);
+
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ============================================
+// 3. COPY WORKFLOW JSON TO CLIPBOARD
+// ============================================
+function initWorkflowCopy() {
+    const copyBtn = document.getElementById('copy-workflow-btn');
+    const successMsg = document.getElementById('copy-success');
+    
+    if (!copyBtn) return;
+    
+    copyBtn.addEventListener('click', async function() {
         try {
-            await navigator.clipboard.writeText(workflowText);
-
-            // Update button to show success
-            const originalText = copyWorkflowBtn.innerText;
-            copyWorkflowBtn.innerText = 'Copied!';
-            copyWorkflowBtn.classList.add('bg-green-600', 'hover:bg-green-500');
-            copyWorkflowBtn.classList.remove('bg-blue-600', 'hover:bg-blue-500');
-
-            // Reset button after 2 seconds
+            // Fetch the workflow JSON file on-demand
+            const response = await fetch('workflow.json');
+            const workflowData = await response.text();
+            
+            // Copy to clipboard
+            await navigator.clipboard.writeText(workflowData);
+            
+            // Show success message
+            if (successMsg) {
+                successMsg.classList.remove('hidden');
+            }
+            
+            // Update button temporarily
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+            copyBtn.classList.remove('bg-white', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+            copyBtn.classList.add('bg-green-600', 'text-white', 'border-green-600');
+            
+            // Reset after 3 seconds
             setTimeout(() => {
-                copyWorkflowBtn.innerText = originalText;
-                copyWorkflowBtn.classList.remove('bg-green-600', 'hover:bg-green-500');
-                copyWorkflowBtn.classList.add('bg-blue-600', 'hover:bg-blue-500');
-            }, 2000);
-        } catch (err) {
-            console.error('Failed to copy:', err);
-            alert('Failed to copy to clipboard. Please try again.');
+                copyBtn.innerHTML = originalHTML;
+                copyBtn.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                copyBtn.classList.add('bg-white', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+                if (successMsg) {
+                    successMsg.classList.add('hidden');
+                }
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Failed to copy workflow:', error);
+            
+            // Show error state
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Failed to Copy';
+            copyBtn.classList.remove('bg-white', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+            copyBtn.classList.add('bg-red-600', 'text-white', 'border-red-600');
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+                copyBtn.classList.remove('bg-red-600', 'text-white', 'border-red-600');
+                copyBtn.classList.add('bg-white', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+            }, 3000);
         }
     });
 }
 
 // ============================================
-// 2. SMOOTH SCROLLING FOR ANCHOR LINKS
+// 4. SMOOTH SCROLLING FOR ANCHOR LINKS
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -63,7 +120,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// 3. FADE-IN ANIMATION ON SCROLL
+// 5. FADE-IN ANIMATION ON SCROLL
 // ============================================
 const observerOptions = {
     threshold: 0.1,
@@ -82,6 +139,8 @@ const observer = new IntersectionObserver((entries) => {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-    loadWorkflowJson();
+    initWorkflowCopy();
+    updateScrollProgress();
+    updateBackToTopButton();
     console.log('AI Email Manager loaded successfully');
 });

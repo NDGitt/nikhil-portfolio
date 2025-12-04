@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Email Manager Setup Guide | n8n Automation</title>
     <meta name="description" content="Complete setup guide for creating an AI-powered email manager using n8n, Gmail, and OpenAI. No technical skills required.">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-inter bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen text-gray-800">
     <!-- Scroll Progress Indicator -->
     <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 z-50 transition-all duration-300" id="scroll-progress" style="width: 0%"></div>
-    
+
     <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-700 focus:outline-none z-40">
         <i class="fas fa-arrow-up"></i>
@@ -40,17 +40,17 @@
                         <p class="text-xs sm:text-sm text-gray-500 font-medium">Automated inbox triage with n8n</p>
                     </div>
                 </div>
-                
+
                 <!-- Back to Main Website -->
-                <a href="/" 
+                <a href="/"
                    class="hidden sm:flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 group"
                    title="Back to Portfolio">
                     <i class="fas fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
                     <span class="text-sm font-medium">Back to Portfolio</span>
                 </a>
-                
+
                 <!-- Mobile Back Button -->
-                <a href="/" 
+                <a href="/"
                    class="sm:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                    title="Back to Portfolio">
                     <i class="fas fa-arrow-left"></i>
@@ -61,7 +61,7 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
-        
+
         <!-- Introduction -->
         <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up">
             <div class="text-center mb-8">
@@ -71,14 +71,14 @@
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Setup Guide: AI Email Manager</h2>
                 <p class="text-lg sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">Transform your chaotic inbox into an organized machine using AI automation.</p>
-                
+
                 <!-- Workflow Diagram Preview -->
                 <div class="mb-8 group">
                     <div class="bg-gray-900 p-2 rounded-xl shadow-2xl overflow-hidden border border-gray-800 relative">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
                         <div class="bg-gray-800/50 rounded-lg overflow-hidden relative">
-                            <img src="images/workflow.png" 
-                                 alt="AI Email Manager n8n Workflow Diagram" 
+                            <img src="images/workflow.png"
+                                 alt="AI Email Manager n8n Workflow Diagram"
                                  class="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
                                  style="max-height: 450px;">
                             <!-- Overlay Gradient -->
@@ -89,15 +89,102 @@
                         The complete automation: Gmail Trigger → AI Classification → Labeling → Drafting Replies
                     </p>
                 </div>
-                
+
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 text-left sm:text-center">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        This workflow acts as your personal executive assistant. It reads every new email, 
-                        <strong>categorizes it</strong> into smart buckets (like "Job Apps" or "Newsletters"), 
-                        <strong>applies the right label</strong> in Gmail, and even <strong>drafts a professional reply</strong> 
+                        This workflow acts as your personal executive assistant. It reads every new email,
+                        <strong>categorizes it</strong> into smart buckets (like "Job Apps" or "Newsletters"),
+                        <strong>applies the right label</strong> in Gmail, and even <strong>drafts a professional reply</strong>
                         for emails that need your attention.
                     </p>
                 </div>
+            </div>
+        </section>
+
+        <!-- How the Workflow Works -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up delay-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center border-b border-gray-100 pb-4">
+                <i class="fas fa-cogs text-blue-600 mr-3"></i>
+                How the Workflow Works
+            </h3>
+
+            <div class="space-y-4">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <div>
+                        <p class="text-gray-700"><strong>Gmail Trigger</strong> runs every minute, checking for new emails</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <div>
+                        <p class="text-gray-700"><strong>Pre-filter</strong> excludes emails already labeled (to avoid re-processing)</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <div>
+                        <p class="text-gray-700"><strong>Main Email Agent</strong> (AI) reads the email content and metadata</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <div>
+                        <p class="text-gray-700"><strong>AI categorizes</strong> and chooses ONE category based on your custom rules</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                    <div>
+                        <p class="text-gray-700"><strong>Applies the Gmail label</strong> automatically</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">6</div>
+                    <div>
+                        <p class="text-gray-700"><strong>Optional:</strong> IF label is "To Respond" → <strong>Draft Agent</strong> creates a professional reply draft</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Understanding the Modular Design -->
+        <section class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 sm:p-8 mb-8 border border-purple-100 animate-fade-in-up delay-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-puzzle-piece text-purple-600 mr-3"></i>
+                Understanding the Modular Design
+            </h3>
+
+            <p class="text-gray-700 mb-4">This workflow has <strong>3 independent sections</strong> that work together:</p>
+
+            <div class="grid gap-4 sm:grid-cols-3">
+                <div class="bg-white p-4 rounded-lg border border-purple-200">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-wrench text-purple-600 mr-2"></i>
+                        <h4 class="font-bold text-gray-900">Setup Nodes</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Generate your custom prompt (disabled after first use)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-green-200">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-sync-alt text-green-600 mr-2"></i>
+                        <h4 class="font-bold text-gray-900">Main Workflow</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Label incoming emails (always active)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-chart-bar text-blue-600 mr-2"></i>
+                        <h4 class="font-bold text-gray-900">Eval Workflow</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Test accuracy (optional, separate)</p>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-white border-l-4 border-purple-500 rounded-r-lg">
+                <p class="text-sm text-gray-700">
+                    <strong>Why modular?</strong> You can enable/disable features independently. Want to turn off draft generation? Just disable that section. Want to test different rules? Only run the eval workflow.
+                </p>
             </div>
         </section>
 
@@ -107,7 +194,7 @@
                 <i class="fas fa-check-double text-blue-600 mr-3"></i>
                 What You'll Need Before You Start
             </h3>
-            
+
             <div class="grid gap-4 sm:grid-cols-1">
                 <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
                     <div class="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-red-500 border border-gray-100">
@@ -144,17 +231,28 @@
             </div>
         </section>
 
-        <!-- Step 1: Prepare Gmail -->
+        <!-- PHASE 1: Prepare Gmail Labels -->
         <section id="step1" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
             <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
             <div class="flex items-center mb-6">
-                <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">1</span>
-                <h3 class="text-2xl font-bold text-gray-900">Prepare Your Gmail Labels</h3>
+                <span class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">1</span>
+                <h3 class="text-2xl font-bold text-gray-900">Create Your Gmail Labels</h3>
             </div>
-            
-            <div class="pl-12">
-                <p class="text-gray-600 mb-6">The AI needs specific buckets to sort your mail. Create these exact labels in Gmail:</p>
-                
+
+            <div class="pl-14">
+                <p class="text-gray-600 mb-4">The AI needs specific labels to exist in your Gmail so it can retrieve their IDs and use them for categorization.</p>
+
+                <div class="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg">
+                    <p class="text-sm text-yellow-800">
+                        <strong>Watch this tutorial:</strong>
+                        <a href="https://www.youtube.com/watch?v=E207lOjLX_g" target="_blank" class="text-yellow-900 underline hover:text-yellow-700 font-semibold">
+                            How to Create Gmail Labels
+                        </a>
+                    </p>
+                </div>
+
+                <p class="text-gray-600 mb-4">Create these exact labels in your Gmail (you can customize later):</p>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                     <div class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 text-blue-800 font-medium text-sm">
                         <i class="fas fa-tag mr-3 opacity-70"></i> Job Applications
@@ -172,36 +270,214 @@
                         <i class="fas fa-tag mr-3 opacity-70"></i> Events
                     </div>
                     <div class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 text-gray-800 font-medium text-sm">
-                        <i class="fas fa-tag mr-3 opacity-70"></i> Newsletters / Marketing
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Newsletters
+                    </div>
+                    <div class="flex items-center p-3 bg-red-50 rounded-lg border border-red-100 text-red-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Marketing
+                    </div>
+                    <div class="flex items-center p-3 bg-orange-50 rounded-lg border border-orange-100 text-orange-800 font-medium text-sm">
+                        <i class="fas fa-tag mr-3 opacity-70"></i> Cold Email
                     </div>
                 </div>
-                
+
                 <div class="flex items-start p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
                     <i class="fas fa-info-circle text-blue-600 mt-1 mr-3"></i>
                     <p class="text-sm text-blue-800">
-                        <strong>Pro Tip:</strong> You can nest these labels under a parent label like "AI Triage" to keep your sidebar clean!
+                        <strong>Pro Tip:</strong> You can nest these labels under a parent label like "AI Triage" to keep your Gmail sidebar clean!
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Step 2: Credentials -->
+        <!-- PHASE 2: Generate Your Custom Prompt (NEW) -->
         <section id="step2" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
             <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
             <div class="flex items-center mb-6">
-                <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">2</span>
-                <h3 class="text-2xl font-bold text-gray-900">Connect Credentials in n8n</h3>
+                <span class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">2</span>
+                <h3 class="text-2xl font-bold text-gray-900">Generate Your Custom Prompt</h3>
             </div>
-            
-            <div class="pl-12">
+
+            <div class="pl-14">
+                <div class="mb-6 p-4 bg-purple-50 border-l-4 border-purple-500 rounded-r-lg">
+                    <p class="text-sm text-purple-800">
+                        <strong>This is a ONE-TIME setup step.</strong> After completing this, you'll disable these nodes and they won't run again unless you want to change your categories.
+                    </p>
+                </div>
+
+                <p class="text-gray-600 mb-6">Before running the main workflow, you need to generate a custom prompt based on YOUR specific label usage and rules. This is what makes the AI understand how YOU want emails categorized.</p>
+
+                <div class="space-y-4 mb-6">
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+                        <p class="text-gray-600 text-sm"><strong>Find the Setup Section:</strong> In the n8n workflow canvas, look for the disabled nodes at the top (they'll be grayed out). These include: "When chat message received", "Get many labels", "Code in JavaScript", "Message a model", and "Step 2 Output".</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+                        <p class="text-gray-600 text-sm"><strong>Enable These Nodes:</strong> Right-click each node and select "Enable" (or click the toggle in the node settings).</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+                        <div class="flex-1">
+                            <p class="text-gray-600 text-sm mb-3"><strong>Open the Chat Panel:</strong> Look for the chat icon on the left sidebar of n8n (it looks like a message bubble). Click it to open the chat interface.</p>
+                            <div class="bg-white p-2 rounded-lg border border-gray-300 shadow-sm">
+                                <img src="images/chat-panel.png"
+                                     alt="n8n Chat Panel Location"
+                                     class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
+                        <div>
+                            <p class="text-gray-600 text-sm mb-2"><strong>Describe Your Label Rules:</strong> Type your instructions in the chat panel. Tell the AI what each label means and when it should be used.</p>
+                            <div class="mt-2 p-3 bg-gray-50 rounded border border-gray-200">
+                                <p class="text-xs text-gray-500 mb-1 font-semibold">Example prompt you could type:</p>
+                                <p class="text-xs text-gray-700 italic">"I want to use Marketing for promotional emails from brands I use. Job Applications should be for updates about positions I've already applied to. New Job Opportunities is for recruiter outreach about positions I haven't applied to yet. To Respond is only for emails from real people asking me direct questions that need my input. Meetings is for calendar invites and meeting requests. Newsletters is for content digests I've subscribed to. Cold Email is for unsolicited sales pitches. Events is for conference and workshop invitations."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</div>
+                        <p class="text-gray-600 text-sm"><strong>Execute the Workflow:</strong> Click "Test Workflow" or "Execute Workflow". The AI will read your Gmail labels, combine them with your instructions, and generate two outputs.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">6</div>
+                        <div>
+                            <p class="text-gray-600 text-sm mb-2"><strong>Save the Outputs:</strong> Open the "Step 2 Output" node execution. You'll see two fields:</p>
+                            <ul class="ml-4 mt-2 space-y-1 text-xs text-gray-600">
+                                <li><strong>prompt_block</strong> - Your full custom categorization rules (this is what the AI will use to make decisions)</li>
+                                <li><strong>label_mapping</strong> - Gmail Label IDs matched to your category names</li>
+                            </ul>
+                            <p class="text-gray-600 text-sm mt-2">Copy both of these - you'll need them in Phase 3.</p>
+                        </div>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">7</div>
+                        <p class="text-gray-600 text-sm"><strong>Disable the Setup Nodes:</strong> Right-click each setup node again and select "Disable". This prevents them from running with the main workflow.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                    <i class="fas fa-lightbulb text-green-600 mt-1 mr-3"></i>
+                    <p class="text-sm text-green-800">
+                        <strong>What just happened?</strong> The AI analyzed your Gmail labels, understood your rules, and generated a custom system prompt that teaches the Main Email Agent exactly how YOU want emails categorized. This makes the workflow personalized to your inbox needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 3: Configure the Main Agent -->
+        <section id="step3" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">3</span>
+                <h3 class="text-2xl font-bold text-gray-900">Configure the Main Agent</h3>
+            </div>
+
+            <div class="pl-14">
+                <p class="text-gray-600 mb-6">Now you'll plug your custom prompt and label mappings into the Main Email Agent. This is where your personalized rules come to life.</p>
+
+                <div class="space-y-4 mb-6">
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+                        <p class="text-gray-600 text-sm"><strong>Open the Main Email Agent Node:</strong> In the workflow canvas, find and click the node called "Main Email Agent".</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+                        <div>
+                            <p class="text-gray-600 text-sm mb-2"><strong>Replace the Categories Section:</strong> Scroll through the system prompt until you find the section that starts with:</p>
+                            <div class="mt-2 p-3 bg-gray-800 rounded font-mono text-xs text-green-400">
+                                ### CATEGORIES & LABELS
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2">Select <strong>everything</strong> from that header down to (but NOT including) the next header:</p>
+                            <div class="mt-2 p-3 bg-gray-800 rounded font-mono text-xs text-green-400">
+                                ### GMAIL LABEL IDS - USE THESE ONLY
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2">Replace that entire block with your <strong>prompt_block</strong> from Phase 2.</p>
+                        </div>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+                        <div>
+                            <p class="text-gray-600 text-sm mb-2"><strong>Replace the Label IDs Section:</strong> Continue scrolling until you find:</p>
+                            <div class="mt-2 p-3 bg-gray-800 rounded font-mono text-xs text-green-400">
+                                ### GMAIL LABEL IDS - USE THESE ONLY
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2">You'll see a list like:</p>
+                            <div class="mt-2 p-3 bg-gray-800 rounded font-mono text-xs text-gray-300">
+                                <span class="text-purple-400">- JOB_APPLICATION_UPDATE</span> → <span class="text-green-400">"Label_124116732797058344"</span><br>
+                                <span class="text-purple-400">- NEW_JOB_OPPORTUNITIES</span> → <span class="text-green-400">"Label_5342224488745394684"</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2">Replace this section with your <strong>label_mapping</strong> from Phase 2. Make sure the format matches (CATEGORY_NAME → "Label_ID").</p>
+                        </div>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
+                        <p class="text-gray-600 text-sm"><strong>Save the Node:</strong> Click "Save" or close the node editor to apply your changes.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                    <i class="fas fa-info-circle text-blue-600 mt-1 mr-3"></i>
+                    <p class="text-sm text-blue-800">
+                        <strong>Why this matters:</strong> The Main Agent now knows YOUR specific categories, YOUR rules for when to apply them, and the exact Gmail Label IDs to use. This is what makes the AI accurate and personalized to your inbox.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customizing Categories Section -->
+        <section class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 sm:p-8 mb-8 border border-yellow-100 animate-fade-in-up delay-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-sliders-h text-yellow-600 mr-3"></i>
+                Want Different Categories?
+            </h3>
+
+            <p class="text-gray-700 mb-4">The beauty of this workflow is that it's fully customizable. You're not stuck with the default categories!</p>
+
+            <div class="space-y-3 mb-4">
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+                    <p class="text-sm text-gray-700">Create whatever labels you want in Gmail (e.g., "Invoice", "Family", "Urgent", "Newsletter Digest")</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+                    <p class="text-sm text-gray-700">Go back to Phase 2 and run the setup nodes again with your new label descriptions</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+                    <p class="text-sm text-gray-700">Copy the new prompt_block and label_mapping outputs</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <i class="fas fa-check-circle text-yellow-600 mt-1"></i>
+                    <p class="text-sm text-gray-700">Paste them into the Main Email Agent (Phase 3) to update your rules</p>
+                </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-lg border border-yellow-200">
+                <p class="text-sm text-gray-700">
+                    <strong>Example custom categories:</strong> "Invoice/Billing" for accounting emails, "Family/Personal" for home life, "Client Updates" for work projects, "Subscriptions" for recurring charges, "Travel" for booking confirmations.
+                </p>
+            </div>
+        </section>
+
+        <!-- PHASE 4: Connect Your Accounts -->
+        <section id="step4" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">4</span>
+                <h3 class="text-2xl font-bold text-gray-900">Connect Your Accounts</h3>
+            </div>
+
+            <div class="pl-14">
                 <p class="text-gray-600 mb-4">Inside n8n, go to <strong>Credentials</strong> in the left sidebar and add:</p>
-                
+
                 <div class="space-y-4 mb-6">
                     <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
                         <i class="fab fa-google text-red-500 text-xl mr-4"></i>
                         <div>
                             <h4 class="font-bold text-gray-900">Gmail OAuth2</h4>
-                            <p class="text-xs text-gray-500">Follow n8n's guide to connect your Google account.</p>
+                            <p class="text-xs text-gray-500">Follow n8n's OAuth guide to connect your Google account.</p>
                         </div>
                     </div>
                     <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
@@ -212,18 +488,31 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg mb-4">
+                    <p class="text-sm text-yellow-800">
+                        <strong>Important:</strong> All nodes with a key icon need credentials connected. After importing the workflow, click on any node showing a red triangle to connect your credentials.
+                    </p>
+                </div>
+
+                <div class="flex items-start p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+                    <i class="fas fa-exclamation-triangle text-red-600 mt-1 mr-3"></i>
+                    <p class="text-sm text-red-800">
+                        <strong>Common error:</strong> If you see red triangles on nodes after import, it means credentials aren't connected yet. Click each node, select your credential from the dropdown, and save.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- Step 3: Import -->
-        <section id="step3" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
-            <div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
+        <!-- PHASE 5: Import & Activate -->
+        <section id="step5" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-pink-500"></div>
             <div class="flex items-center mb-6">
-                <span class="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">3</span>
-                <h3 class="text-2xl font-bold text-gray-900">Import the Workflow</h3>
+                <span class="flex-shrink-0 w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">5</span>
+                <h3 class="text-2xl font-bold text-gray-900">Import the Workflow & Activate</h3>
             </div>
-            
-            <div class="pl-12">
+
+            <div class="pl-14">
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 mb-6">
                     <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-file-code text-gray-500 mr-2"></i>
@@ -239,53 +528,246 @@
                             Copy to Clipboard
                         </button>
                     </div>
-                    <pre id="workflow-json" class="hidden">Loading...</pre>
-                </div>
-                
-                <ol class="list-decimal list-inside space-y-2 text-gray-600 ml-1">
-                    <li>In n8n, click <strong>Workflows</strong> (top right) → <strong>Import from File/Clipboard</strong>.</li>
-                    <li>Paste the JSON or upload the file.</li>
-                    <li>The full graph will appear on your canvas.</li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Step 4: Final Config -->
-        <section id="step4" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
-            <div class="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
-            <div class="flex items-center mb-6">
-                <span class="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold mr-4 shadow-md">4</span>
-                <h3 class="text-2xl font-bold text-gray-900">Final Configuration</h3>
-            </div>
-            
-            <div class="pl-12">
-                <p class="text-gray-600 mb-4">
-                    You need to tell the AI which Gmail Label ID corresponds to which category.
-                </p>
-                
-                <div class="space-y-4">
-                    <div class="step-item flex items-start">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
-                        <p class="text-gray-600 text-sm">Open the <strong>"Main Email Agent"</strong> node.</p>
-                    </div>
-                    <div class="step-item flex items-start">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
-                        <p class="text-gray-600 text-sm">Scroll down to the system prompt.</p>
-                    </div>
-                    <div class="step-item flex items-start">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
-                        <p class="text-gray-600 text-sm">Replace the placeholder IDs (e.g., <code>"Label_123"</code>) with your actual Label IDs.</p>
+                    
+                    <div id="copy-success" class="hidden mt-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                        <p class="text-sm text-green-700 flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Workflow JSON copied to clipboard! You can now paste it directly in n8n.
+                        </p>
                     </div>
                 </div>
 
-                <div class="mt-6 p-4 bg-gray-800 rounded-lg font-mono text-xs text-gray-300 overflow-x-auto border border-gray-700">
-                    <span class="text-purple-400">"JOB_APPLICATION_UPDATE"</span>: <span class="text-green-400">"Label_8274912..."</span>,<br>
-                    <span class="text-purple-400">"NEW_JOB_OPPORTUNITIES"</span>: <span class="text-green-400">"Label_9928371..."</span>
+                <div class="space-y-4 mb-6">
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+                        <p class="text-gray-600 text-sm">In n8n, click <strong>Workflows</strong> (top right) → <strong>Import from File/Clipboard</strong>.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+                        <p class="text-gray-600 text-sm">Paste the JSON or upload the file. The full workflow graph will appear on your canvas.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+                        <p class="text-gray-600 text-sm">Connect your credentials (Phase 4) to all nodes that need them.</p>
+                    </div>
+                    <div class="step-item flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
+                        <p class="text-gray-600 text-sm"><strong>Click the toggle at the top right to make the workflow "Active".</strong> The Gmail Trigger will now check for new emails every minute.</p>
+                    </div>
                 </div>
 
                 <div class="mt-6 flex items-center text-green-600 font-semibold bg-green-50 px-4 py-3 rounded-lg">
                     <i class="fas fa-toggle-on text-xl mr-3"></i>
-                    Flip the switch to "Active" and you're live!
+                    Once active, your AI Email Manager is live and monitoring your inbox!
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 6: Optional - Draft Agent -->
+        <section id="step6" class="step-section bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 relative overflow-hidden animate-fade-in-up delay-200">
+            <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
+            <div class="flex items-center mb-6">
+                <span class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4 shadow-md">6</span>
+                <h3 class="text-2xl font-bold text-gray-900">Optional: Enable Draft Agent</h3>
+            </div>
+
+            <div class="pl-14">
+                <div class="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
+                    <p class="text-sm text-indigo-800">
+                        <strong>This feature is optional.</strong> The Draft Agent automatically writes professional reply drafts for emails that need your response.
+                    </p>
+                </div>
+
+                <h4 class="font-bold text-gray-900 mb-3">How the Draft Agent Works:</h4>
+
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">1</div>
+                        <p class="text-sm text-gray-700">After the Main Agent labels an email, it checks: "Is this labeled 'To Respond'?" (Label_2)</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">2</div>
+                        <p class="text-sm text-gray-700">If YES → The workflow triggers the "Email Draft Agent"</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">3</div>
+                        <p class="text-sm text-gray-700">The Draft Agent reads the email thread, understands the question or request, and writes a professional reply</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">4</div>
+                        <p class="text-sm text-gray-700">The draft appears in your Gmail Drafts folder, ready for you to review and send</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+                    <h4 class="font-semibold text-gray-900 mb-2 text-sm">Finding the Control Node:</h4>
+                    <p class="text-sm text-gray-600 mb-2">Look for the node called <strong>"Is a response expected?"</strong> in the workflow. This is the conditional gate that controls whether drafts get created.</p>
+                    <p class="text-sm text-gray-600">To disable draft generation entirely, you can disable the "Email Draft Agent" and "Create a draft in Gmail" nodes.</p>
+                </div>
+
+                <div class="flex items-start p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                    <i class="fas fa-lightbulb text-blue-600 mt-1 mr-3"></i>
+                    <p class="text-sm text-blue-800">
+                        <strong>Why separate agents?</strong> The Main Agent (categorization) runs fast and cheap using GPT-4o-mini. The Draft Agent (writing) only triggers when needed, making the workflow efficient and cost-effective.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing with Evaluations Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up delay-200">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center border-b border-gray-100 pb-4">
+                <i class="fas fa-chart-line text-blue-600 mr-3"></i>
+                Testing with Evaluations (Advanced)
+            </h3>
+
+            <p class="text-gray-600 mb-6">The workflow includes an optional evaluation system to test how accurately the AI categorizes emails. This is useful when you want to refine your rules or test new categories.</p>
+
+            <div class="space-y-4 mb-6">
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-2">How Evaluations Work:</h4>
+                    <p class="text-sm text-gray-600 mb-3">The bottom section of the workflow (nodes starting with "When fetching a dataset row") is a separate testing system. It reads test cases from a Google Sheet, runs the Main Agent on them, and compares predicted labels to your expected labels.</p>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200 mb-4">
+                    <h4 class="font-semibold text-gray-900 mb-3 text-sm flex items-center">
+                        <i class="fas fa-plug text-blue-600 mr-2"></i>
+                        Connecting the Eval Workflow:
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-3">When running evaluations, you need to connect the nodes correctly. This is how you should wire the eval section to test your Main Agent:</p>
+                    <div class="bg-white p-2 rounded-lg border border-blue-300 shadow-sm">
+                        <img src="images/eval-connections.png"
+                             alt="Eval workflow node connections showing how to connect the testing section"
+                             class="w-full rounded">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 italic">The eval section should be connected as shown to properly test email categorization accuracy.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 class="font-semibold text-gray-900 mb-3 text-sm">Google Sheet Setup:</h4>
+                    <p class="text-sm text-gray-600 mb-2">Create a Google Sheet with these columns:</p>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div class="p-2 bg-white rounded border border-gray-300 text-xs">
+                            <strong>email_id</strong><br>
+                            <span class="text-gray-500">Gmail message ID</span>
+                        </div>
+                        <div class="p-2 bg-white rounded border border-gray-300 text-xs">
+                            <strong>email_json</strong><br>
+                            <span class="text-gray-500">Full email JSON string</span>
+                        </div>
+                        <div class="p-2 bg-white rounded border border-gray-300 text-xs">
+                            <strong>expected_label_id</strong><br>
+                            <span class="text-gray-500">The label you expect</span>
+                        </div>
+                        <div class="p-2 bg-white rounded border border-gray-300 text-xs">
+                            <strong>expected_has_draft</strong><br>
+                            <span class="text-gray-500">TRUE or FALSE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-2 text-sm">When to Use Evals:</h4>
+                    <ul class="space-y-2 ml-4">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check text-green-600 mt-1 text-xs"></i>
+                            <p class="text-sm text-gray-600">You notice the AI is consistently mislabeling certain types of emails</p>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check text-green-600 mt-1 text-xs"></i>
+                            <p class="text-sm text-gray-600">You've updated your categories and want to test before going live</p>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-check text-green-600 mt-1 text-xs"></i>
+                            <p class="text-sm text-gray-600">You want to measure accuracy improvements over time</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-4 bg-purple-50 border-l-4 border-purple-500 rounded-r-lg">
+                <p class="text-sm text-purple-800">
+                    <strong>Note:</strong> The eval workflow runs separately from the main workflow. You trigger it manually when you want to test, and it writes results back to your Google Sheet showing predicted vs expected labels.
+                </p>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100 animate-fade-in-up delay-300">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center border-b border-gray-100 pb-4">
+                <i class="fas fa-tools text-red-600 mr-3"></i>
+                Troubleshooting Common Issues
+            </h3>
+
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-red-50 px-4 py-3 border-b border-gray-200">
+                        <h4 class="font-bold text-gray-900 text-sm flex items-center">
+                            <i class="fas fa-exclamation-circle text-red-600 mr-2"></i>
+                            Workflow doesn't trigger
+                        </h4>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">✓ Check that the workflow is <strong>Active</strong> (toggle in top right should be ON)</p>
+                        <p class="text-sm text-gray-600">✓ Verify the Gmail Trigger is set to run every minute</p>
+                        <p class="text-sm text-gray-600">✓ Check that Gmail OAuth2 credentials are connected</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-yellow-50 px-4 py-3 border-b border-gray-200">
+                        <h4 class="font-bold text-gray-900 text-sm flex items-center">
+                            <i class="fas fa-tags text-yellow-600 mr-2"></i>
+                            No labels applied to emails
+                        </h4>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">✓ Verify label IDs in Phase 3 match your actual Gmail label IDs</p>
+                        <p class="text-sm text-gray-600">✓ Check the Main Agent's execution output - does it show a tool call?</p>
+                        <p class="text-sm text-gray-600">✓ Ensure the format is correct: <code>Label_123456789</code></p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-orange-50 px-4 py-3 border-b border-gray-200">
+                        <h4 class="font-bold text-gray-900 text-sm flex items-center">
+                            <i class="fas fa-question-circle text-orange-600 mr-2"></i>
+                            AI applies wrong labels
+                        </h4>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">✓ Go back to Phase 2 and refine your rule descriptions</p>
+                        <p class="text-sm text-gray-600">✓ Be more specific about "when to apply" and "when NOT to apply"</p>
+                        <p class="text-sm text-gray-600">✓ Use the Eval workflow to test and improve accuracy</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-purple-50 px-4 py-3 border-b border-gray-200">
+                        <h4 class="font-bold text-gray-900 text-sm flex items-center">
+                            <i class="fas fa-file-alt text-purple-600 mr-2"></i>
+                            Drafts not created
+                        </h4>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">✓ Check that "To Respond" label ID is correct (should be Label_2 or your custom ID)</p>
+                        <p class="text-sm text-gray-600">✓ Verify the "Is a response expected?" node is enabled</p>
+                        <p class="text-sm text-gray-600">✓ Check that the Draft Agent and "Create a draft in Gmail" nodes are enabled</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-red-50 px-4 py-3 border-b border-gray-200">
+                        <h4 class="font-bold text-gray-900 text-sm flex items-center">
+                            <i class="fas fa-triangle-exclamation text-red-600 mr-2"></i>
+                            Nodes show red triangles
+                        </h4>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">✓ Red triangles mean credentials aren't connected</p>
+                        <p class="text-sm text-gray-600">✓ Click each node with a triangle → Select your credential from dropdown → Save</p>
+                        <p class="text-sm text-gray-600">✓ Make sure you've created the credentials first (Phase 4)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -297,9 +779,9 @@
             </div>
             <h3 class="text-3xl font-bold mb-4">You're All Set!</h3>
             <p class="text-lg text-green-50 mb-8 max-w-2xl mx-auto">
-                Your AI Email Manager is now running. It will check for new emails every minute, categorize them, and prepare draft responses for you.
+                Your AI Email Manager is now running. It will check for new emails every minute, categorize them using your custom rules, and prepare draft responses when needed.
             </p>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">
                     <i class="fas fa-clock text-2xl mb-2 opacity-80"></i>
@@ -319,6 +801,85 @@
             </div>
         </section>
 
+        <!-- More n8n Workflows Section -->
+        <section class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 mb-8 border border-indigo-200">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-500 rounded-full mb-4">
+                    <i class="fab fa-github text-white text-2xl"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Want More n8n Workflows?</h3>
+                
+                <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                    I've shared other n8n workflows on GitHub that you can explore, use, and customize for your own automation needs.
+                </p>
+                
+                <a href="https://github.com/NDGitt/n8n-Workflows" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all shadow-md group">
+                    <i class="fab fa-github text-xl"></i>
+                    <span>View My n8n Workflows Repository</span>
+                    <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg border border-indigo-100">
+                        <i class="fas fa-code text-indigo-500 text-xl mb-2"></i>
+                        <h4 class="font-semibold text-gray-900 text-sm">Ready-to-Use</h4>
+                        <p class="text-xs text-gray-600">Import and customize workflows</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-indigo-100">
+                        <i class="fas fa-book-open text-purple-500 text-xl mb-2"></i>
+                        <h4 class="font-semibold text-gray-900 text-sm">Well Documented</h4>
+                        <p class="text-xs text-gray-600">Clear setup instructions included</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-gradient-to-r from-orange-50 to-pink-50 rounded-xl p-8 mb-8 border border-orange-200">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full mb-4">
+                    <i class="fas fa-newspaper text-white text-2xl"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Subscribe to my newsletter - Humans, Machines & Meaning</h3>
+                
+                <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                    Everything AI as seen in San Francisco — real conversations, experiments, and insights about how humans and machines are evolving together. What's happening, what it means, and where it's all going.
+                </p>
+                
+                <a href="https://nikhildevgan.substack.com/?utm_campaign=profile&utm_medium=profile-page" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-pink-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-pink-700 transition-all shadow-md group">
+                    <i class="fas fa-envelope-open-text text-lg"></i>
+                    <span>Subscribe to Newsletter</span>
+                    <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg border border-orange-100">
+                        <i class="fas fa-city text-orange-500 text-xl mb-2"></i>
+                        <h4 class="font-semibold text-gray-900 text-sm">SF Insights</h4>
+                        <p class="text-xs text-gray-600">From the heart of tech</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-pink-100">
+                        <i class="fas fa-flask text-pink-500 text-xl mb-2"></i>
+                        <h4 class="font-semibold text-gray-900 text-sm">Real Experiments</h4>
+                        <p class="text-xs text-gray-600">What's actually working</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-orange-100">
+                        <i class="fas fa-lightbulb text-orange-500 text-xl mb-2"></i>
+                        <h4 class="font-semibold text-gray-900 text-sm">Deep Meaning</h4>
+                        <p class="text-xs text-gray-600">Why it all matters</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -329,15 +890,15 @@
             </div>
             <p class="text-gray-900 font-bold text-lg mb-2">AI Email Manager Setup Guide</p>
             <p class="text-gray-500 text-sm mb-6">Automate your inbox with n8n, Gmail, and OpenAI</p>
-            
+
             <div class="border-t border-gray-100 pt-6">
                 <p class="text-gray-500 text-sm flex items-center justify-center gap-1">
-                    Built with <i class="fas fa-heart text-red-500 mx-1"></i> by 
+                    Built with <i class="fas fa-heart text-red-500 mx-1"></i> by
                     <a href="/" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">Nikhil Devgan</a>
                 </p>
                 <div class="flex justify-center space-x-4 mt-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/nikhil-devgan" class="text-gray-400 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="https://www.github.com/NDGitt" class="text-gray-400 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
                 </div>
             </div>
         </div>
