@@ -1,5 +1,13 @@
 [
   {
+    "id": "ai-8",
+    "title": "Pecan Talent – AI Career Platform",
+    "description": "AI-powered platform connecting candidates and recruiters — showcase real expertise, search talent in plain English.",
+    "image": "/images/pecan-talent-thumbnail.png",
+    "link": "https://pecantalent.com",
+    "tags": ["AI", "Recruiting", "NLP", "Product", "Career Platform"]
+  },
+  {
     "id": "ai-4",
     "title": "Resume Automation with n8n + AI Agent",
     "description": "End-to-end system that builds hyper personalized resumes in <1 minute using n8n orchestration, an AI agent, and a suite of Google Products",
