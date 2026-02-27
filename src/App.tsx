@@ -167,7 +167,7 @@ const DesktopView = () => {
                     className="flex-shrink-0"
                   >
                     <img
-                      src="/images/profile.jpg"
+                      src="/images/profile.jpeg"
                       alt="Nikhil Devgan"
                       className="w-40 h-40 rounded-2xl object-cover shadow-lg ring-4 ring-white"
                     />
@@ -177,7 +177,7 @@ const DesktopView = () => {
                       Nikhil Devgan
                     </h1>
                     <p className="text-base text-gray-600 mt-1">
-                      Product & Strategy Professional
+                      AI Agent Product Manager
                     </p>
                     <p className="text-sm mt-1">
                       <span className="text-[#FD8515]">Berkeley</span>
