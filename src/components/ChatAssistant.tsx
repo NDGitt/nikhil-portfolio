@@ -10,9 +10,9 @@ type TopicType = 'Work Experience' | 'Projects' | 'Skills' | 'MBA Journey' | 'Pr
 
 const EXAMPLE_QUESTIONS: Record<TopicType, string[]> = {
   'Work Experience': [
+    'What does Nikhil do as an AI Agent Product Manager at Liberate?',
     'What did Nikhil do at ZS Associates?',
-    'What was the impact of his work at the SMB Accelerator?',
-    'How did his consulting experience shape his product mindset?'
+    'What was the impact of his work at the SMB Accelerator?'
   ],
   'Projects': [
     'What\'s an AI tool Nikhil built recently?',
@@ -31,9 +31,9 @@ const EXAMPLE_QUESTIONS: Record<TopicType, string[]> = {
     'What\'s a favorite class project Nikhil worked on at Haas?'
   ],
   'Product Strategy': [
+    'How does Nikhil approach building AI agents for insurance workflows?',
     'How did Nikhil design and scale the SMB accelerator?',
-    'How does Nikhil approach GTM strategy?',
-    'How has Nikhil applied A/B testing or funnel analysis in his work?'
+    'How does Nikhil approach GTM strategy?'
   ]
 };
 

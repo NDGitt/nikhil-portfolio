@@ -13,7 +13,7 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             <motion.img
               whileHover={{ scale: 1.05 }}
-              src="/images/profile.jpg"
+              src="/images/profile.jpeg"
               alt="Nikhil Devgan"
               className="w-20 h-20 rounded-2xl object-cover shadow-lg ring-2 ring-indigo-100"
             />
@@ -26,7 +26,7 @@ const Header = () => {
               >
                 Nikhil Devgan
               </motion.h1>
-              <p className="text-gray-600 mt-1 text-lg">Product & Strategy Professional</p>
+              <p className="text-gray-600 mt-1 text-lg">AI Agent Product Manager</p>
             </div>
           </div>
 

@@ -24,7 +24,7 @@ const MobileView = () => {
             <div className="flex flex-col items-center text-center">
               <motion.img
                 whileHover={{ scale: 1.05 }}
-                src="/images/profile.jpg"
+                src="/images/profile.jpeg"
                 alt="Nikhil Devgan"
                 className="w-32 h-32 rounded-2xl object-cover shadow-lg ring-4 ring-white mb-4"
               />
@@ -32,7 +32,7 @@ const MobileView = () => {
                 Nikhil Devgan
               </h1>
               <p className="text-base text-gray-600">
-                Product & Strategy Professional
+                AI Agent Product Manager
               </p>
               <p className="text-sm">
                 <span className="text-[#FD8515]">Berkeley</span>
