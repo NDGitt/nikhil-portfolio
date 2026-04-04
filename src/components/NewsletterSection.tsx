@@ -4,6 +4,14 @@ const NewsletterSection = () => {
   // Manual post data for full control over styling
   const posts = [
     {
+      id: 'awkward-phase',
+      title: 'The Awkward Phase of AI',
+      description: 'Between layoffs, tech debt, and experimentation, companies are still figuring out how AI actually changes work.',
+      date: 'Mar 09',
+      link: 'https://nikhildevgan.substack.com/p/the-awkward-phase-of-ai',
+      image: '/images/newsletter-awkward-phase.png'
+    },
+    {
       id: 'ai-partner',
       title: 'When AI Starts Feeling Like a Real Partner',
       description: 'How I use AI for vibe coded apps, comics, and videos, with real examples and a link to $300 in Google’s Veo credits',
